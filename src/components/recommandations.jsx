@@ -32,7 +32,7 @@ const Diagram = props => {
   };
 
   return (
-    <div className="col-6 d-flex justify-content-center">
+    <div className="col-lg-6 d-flex justify-content-center">
       <Pie data={data} options={options} height={10} width={10} />
     </div>
   );
@@ -46,11 +46,15 @@ const Tableau = props => {
           <div className="col-12 py-2">
             <h4>Depuis que vous êtes sur cette page :</h4>
           </div>
-          <div className="row d-flex justify-content-center col-12 py-2">
+          <div className="row alignBlock col-12 py-2">
             {props.test.map(data => (
-              <div className="col-2 m-2 subSquare">
-                <div className="col-12 py-2">Mail reçus :</div>
-                <div className="col-12 py-4 number">{props.mail}</div>
+              <div className="col-lg-2 m-2 subSquare">
+                <div className="col-12 py-2 d-flex justify-content-center">
+                  Mail reçus :
+                </div>
+                <div className="col-12 py-4 number d-flex justify-content-center">
+                  {props.mail}
+                </div>
               </div>
             ))}
           </div>
@@ -63,7 +67,7 @@ const Tableau = props => {
 const One = () => {
   return (
     <React.Fragment>
-      <div className="col-6 d-flex justify-content-center">
+      <div className="col-lg-6 d-flex justify-content-center">
         <div className="col-12 my-4 d-flex border">
           <div className="col-4 p-2">
             <img
@@ -120,20 +124,20 @@ class recommandations extends Component {
           <div className="col-12 recommand py-5 pl-5">Nos recommandations</div>
         </div>
         <div className="row">
-          <div className="col-6 paddSide">
+          <div className="col-lg-6 paddSideA">
             <div className="row paddSide">
               {this.state.test.map(data => (
                 <One />
               ))}
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-lg-6">
             <Diagram />
           </div>
         </div>
         <div className="row">
-          <div className="col-6" />
-          <div className="col-6 espacePetition">
+          <div className="col-lg-6" />
+          <div className="col-lg-6 espacePetition">
             <Petition />
           </div>
         </div>
