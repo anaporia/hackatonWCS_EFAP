@@ -1,0 +1,63 @@
+.head {
+  padding-top: 6%;
+  padding-bottom: 6%;
+  color: rgb(176, 36, 134);
+  font-size: 1.5em;
+}
+
+.tableStats {
+  color: rgb(176, 36, 134);
+  border: 4px rgb(176, 36, 134) solid;
+}
+
+.square {
+  min-height: 40vh;
+}
+
+.subSquare {
+  border: 1px rgb(176, 36, 134) solid;
+  min-height: 13vh;
+}
+
+.recommand {
+  color: rgb(176, 36, 134);
+  font-size: 2.2em;
+  text-align: left;
+}
+
+.number {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.cardRec {
+  border: 4px rgb(176, 36, 134) solid;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: rgb(176, 36, 134);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.content {
+  color: rgb(176, 36, 134);
+  font-size: 1.2em;
+}
+
+.paddSide {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.espacePetition {
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.compteur {
+  font-weight: bold;
+  font-size: 1.2em;
+}
