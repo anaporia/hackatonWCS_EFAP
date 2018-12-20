@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Pie } from "react-chartjs-2";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./recommandations.css";
+import Header from "./Header";
 
 const Diagram = props => {
   const data = {
@@ -29,7 +31,7 @@ const Diagram = props => {
   };
 
   return (
-    <div className="col-6" style={{ width: "300px" }}>
+    <div className="col-6 d-flex justify-content-center">
       <Pie data={data} options={options} height={10} width={10} />
     </div>
   );
@@ -38,14 +40,18 @@ const Diagram = props => {
 const Tableau = props => {
   return (
     <React.Fragment>
-      <div className="col-8 border" style={{ minHeight: "400px" }}>
-        <div className="col-12 py-2">
-          <h4>Depuis que vous êtes sur cette page :</h4>
-        </div>
-        <div className="col-12 py-2">
-          <div className="col-2 border">
-            <div className="col-12 py-2">Mail reçus :</div>
-            <div className="col-12 py-5">{props.mail}</div>
+      <div className="square col-12 d-flex justify-content-center">
+        <div className="col-8 tableStats">
+          <div className="col-12 py-2">
+            <h4>Depuis que vous êtes sur cette page :</h4>
+          </div>
+          <div className="row d-flex justify-content-center col-12 py-2">
+            {props.test.map(data => (
+              <div className="col-2 m-2 subSquare">
+                <div className="col-12 py-2">Mail reçus :</div>
+                <div className="col-12 py-4 number">{props.mail}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -56,17 +62,19 @@ const Tableau = props => {
 const One = () => {
   return (
     <React.Fragment>
-      <div className="col-6 d-flex border">
-        <div className="3">
-          <img
-            src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
-            alt=""
-            style={{ height: "150px", width: "150px" }}
-          />
-        </div>
-        <div className="9">
-          <div className="12">title</div>
-          <div className="12">fregerge</div>
+      <div className="col-12 d-flex justify-content-center">
+        <div className="col-6 my-4 d-flex border">
+          <div className="3">
+            <img
+              src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+              alt=""
+              style={{ height: "150px", width: "150px" }}
+            />
+          </div>
+          <div className="9">
+            <div className="12">title</div>
+            <div className="12">fregerge</div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -80,7 +88,8 @@ class recommandations extends Component {
       mail: 86400,
       newmail: 0,
       mel: 100000,
-      newmel: 0
+      newmel: 0,
+      test: [0, 1, 2, 3, 4, 5, 6, 8]
     };
   }
 
@@ -93,39 +102,30 @@ class recommandations extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row py-4">
-          <div className="col-4" />
-          <div className="col-4">
-            <h2>MON SITE WEB</h2>
-          </div>
-          <div className="col-4 d-flex">
-            <div class="mr-5">
-              <h4>Accueil</h4>
-            </div>
-            <div className="ml-5">
-              <h4>Les recommandations</h4>
-            </div>
+        <Header />
+        <div className="row d-flex justify-content-center">
+          <div className="col-8 head">
+            Parce qu'on ne pourra jamais se passer de nos séries préférées, de
+            nos conversations avec nos amis, de nos moments d'égarement sur
+            Youtube, ou de nos recherches sur internet...
+            <br /> Nous pouvons quand même agir pour opter pour une meilleure
+            façon de consommer d'une manière plus maitrisée !
           </div>
         </div>
         <div className="row">
-          <div className="col-12 py-5">
-            <h4>
-              Parce qu'on ne pourra jamais se passer de nos séries préférées, de
-              nos conversations avec nos amis, de nos moments d'égarement sur
-              Youtube, ou de nos recherches sur internet...
-              <br /> Nous pouvons quand même agir pour opter pour une meilleure
-              façon de consommer d'une manière plus maitrisée.
-            </h4>
-          </div>
+          <Tableau mail={this.state.newmail} test={this.state.test} />
+        </div>
+        <div className="row py-5">
+          <div className="col-12 recommand py-5 pl-5">Nos recommandations</div>
         </div>
         <div className="row">
-          <div className="col-12 d-flex justify-content-center">
-            <Tableau mail={this.state.newmail} />
+          <div className="col-6">
+            {this.state.test.map(data => (
+              <One />
+            ))}
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <h2>Nos recommandations</h2>
+          <div className="col-6">
+            <Diagram />
           </div>
         </div>
       </div>
