@@ -9,11 +9,17 @@ class Homepage extends React.Component {
         <Header />
         <div className='container'>
           <div className='row align-items-center'>
-            <div className=' Board col-lg-6'>
+            <div className='Board col-lg-6'>
               <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2'>image</th>
-                  <td>Consommation KW</td>
+                  <th rowspan='2' className='container'>
+                    <img
+                      className='picture1'
+                      src='./assets/sun.png'
+                      alt='cook'
+                    />
+                  </th>
+                  <td className='td'>Consommation KW</td>
                 </tr>
                 <tr>
                   <td>Consommation KW</td>
@@ -22,7 +28,13 @@ class Homepage extends React.Component {
 
               <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2'>image</th>
+                  <th rowspan='2' className='container'>
+                    <img
+                      className='picture1'
+                      src='./assets/moon.png'
+                      alt='cook'
+                    />
+                  </th>
                   <td>Consommation KW</td>
                 </tr>
                 <tr>
@@ -33,7 +45,8 @@ class Homepage extends React.Component {
             <div className='Youtube col-lg-6'>
               <YouTube
                 videoId='Fki8FxTryuI'
-                className='embed-responsive-item'
+                className='player embed-responsive-item'
+                autoPlayVideo={true}
               />
             </div>
           </div>
