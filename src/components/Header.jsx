@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink
-} from "reactstrap";
+} from 'reactstrap';
 
 class Header extends React.Component {
   constructor(props) {
@@ -27,16 +27,19 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="success" light expand="md">
+        <Navbar color='success' light expand='md'>
           <NavbarBrand>NOM EQUIPE</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className='ml-auto' navbar>
               <NavItem>
-                <NavLink href="/">Homepage</NavLink>
+                <NavLink href='/'>Homepage</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/conseils">Conséils</NavLink>
+                <NavLink href='/conseils'>Conséils</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href='/sondage'>Sondage</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
