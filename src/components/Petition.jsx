@@ -157,7 +157,7 @@ class Petition extends React.Component {
     return (
       <div className="container">
         <div className="row d-flex justify-content-center">
-          <div className="col-lg-3">
+          <div className="col-lg-5">
             <Card>
               <CardImg
                 top
