@@ -97,16 +97,6 @@ class Petition extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch("http://localhost:59390/sondage")
-      .then(results => results.json())
-      .then(data => {
-        this.setState({
-          compteur: data[0].id
-        });
-      });
-  }
-
   handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -126,6 +116,15 @@ class Petition extends React.Component {
     this.setState({ email: event.target.value });
   };
 
+  componentDidMount() {
+    let api = axios;
+    api.get("http://localhost:59390/sondage").then(data => {
+      this.setState({
+        compteur: data.data[0].people
+      });
+    });
+  }
+
   toggle = () => {
     if (this.state.modal === true) {
       let api = axios;
@@ -138,6 +137,11 @@ class Petition extends React.Component {
         .post("http://localhost:59390/utilisateur", info)
         .then(response => {
           this.setState({ open: true });
+          api.get("http://localhost:59390/sondage").then(data => {
+            this.setState({
+              compteur: data.data[0].people
+            });
+          });
         })
         .catch(error => console.log(error));
       this.setState({
