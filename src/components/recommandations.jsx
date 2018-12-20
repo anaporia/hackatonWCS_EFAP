@@ -62,18 +62,18 @@ const Tableau = props => {
 const One = () => {
   return (
     <React.Fragment>
-      <div className="col-12 d-flex justify-content-center">
-        <div className="col-6 my-4 d-flex border">
-          <div className="3">
+      <div className="col-6 d-flex justify-content-center">
+        <div className="col-12 my-4 d-flex border">
+          <div className="col-4 p-2">
             <img
               src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
               alt=""
-              style={{ height: "150px", width: "150px" }}
+              className="cardRec"
             />
           </div>
           <div className="9">
-            <div className="12">title</div>
-            <div className="12">fregerge</div>
+            <div className="12 title">title</div>
+            <div className="12 content p-2">fregerge</div>
           </div>
         </div>
       </div>
@@ -119,10 +119,12 @@ class recommandations extends Component {
           <div className="col-12 recommand py-5 pl-5">Nos recommandations</div>
         </div>
         <div className="row">
-          <div className="col-6">
-            {this.state.test.map(data => (
-              <One />
-            ))}
+          <div className="col-6 paddSide">
+            <div className="row paddSide">
+              {this.state.test.map(data => (
+                <One />
+              ))}
+            </div>
           </div>
           <div className="col-6">
             <Diagram />
