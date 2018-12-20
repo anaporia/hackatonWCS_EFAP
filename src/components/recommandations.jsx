@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Pie } from "react-chartjs-2";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./recommandations.css";
+import Petition from "./Petition";
 import Header from "./Header";
 
 const Diagram = props => {
@@ -128,6 +129,12 @@ class recommandations extends Component {
           </div>
           <div className="col-6">
             <Diagram />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6" />
+          <div className="col-6 espacePetition">
+            <Petition />
           </div>
         </div>
       </div>
