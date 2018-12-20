@@ -1,6 +1,6 @@
 ![wcsefap](src/assets/img/wcsefap.png)
 
-# Project kOoOl
+# Project WCS-EFAP
 
 Web application to BLABLA.
 
