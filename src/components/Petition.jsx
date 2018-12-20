@@ -161,12 +161,12 @@ class Petition extends React.Component {
     return (
       <div className='container'>
         <div className='row d-flex justify-content-center'>
-          <div className='col-3'>
+          <div className='col-12'>
             <Card>
               <CardImg
                 top
                 width='100%'
-                src='https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180'
+                src='https://placeholdit.imgix.net/~text?txtsize=33&txt=200%C3%97180&w=318&h=180'
                 alt='Card image cap'
               />
               <CardBody>
@@ -175,13 +175,15 @@ class Petition extends React.Component {
                   Tu veux faire part de la pétition TDF et recevoir des
                   nouvelles ?
                 </CardText>
-                <Button onClick={this.toggle}>
-                  {this.props.buttonLabel}Bien sur !
-                </Button>
+                <div className='row d-flex justify-content-center'>
+                  <Button onClick={this.toggle}>
+                    {this.props.buttonLabel}Bien sur !
+                  </Button>
+                </div>
               </CardBody>
-              <span className='compteur p-4 d-flex justify-content-center'>
+              <p className='font-weight-bold d-flex justify-content-center'>
                 {this.state.compteur} utilisateurs ont répondu à l'enquête.
-              </span>
+              </p>
             </Card>
             <Snackbar
               anchorOrigin={{
@@ -210,6 +212,12 @@ class Petition extends React.Component {
               <ModalBody>
                 <Form>
                   <FormGroup>
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Enim nemo facere incidunt nam, rem quidem dolorum ut sunt
+                      mollitia quam debitis qui non voluptates dignissimos in
+                      dolor maxime officiis maiores.
+                    </p>
                     <Label for='exampleEmail'>Email</Label>
                     <Input
                       type='email'

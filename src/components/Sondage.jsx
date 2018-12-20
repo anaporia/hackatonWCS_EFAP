@@ -8,7 +8,7 @@ import Header from './Header';
 class Sondage extends React.Component {
   render() {
     return (
-      <div className='container-fluid'>
+      <div className='container-fluid px-0'>
         <Header />
         <div className='row justify-content-center'>
           <div className=''>
