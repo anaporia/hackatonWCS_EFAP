@@ -22,21 +22,16 @@ class App extends Component {
 
   render() {
     return (
-      <Navbar id='nav-tool' color='dark' dark expand='md'>
-        <NavbarBrand href='/' className='mt-2 navigation'>
-          Teeth or Treat !
-        </NavbarBrand>
+      <Navbar dark expand='md'>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className='ml-5' navbar>
             <NavItem>
-              <NavLink className='mt-2 ml-5 navigation' href='/Gamepage'>
-                Jeu
-              </NavLink>
+              <NavLink href='/Gamepage'>Jeu</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className='mt-2 ml-5 navigation' href='/Candydex'>
-                Bonbondex
+                trial1
               </NavLink>
             </NavItem>
           </Nav>
