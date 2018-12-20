@@ -14,15 +14,15 @@ class Sondage extends React.Component {
           <div className=''>
             <h3>MA CONSOMMATION</h3>
             <br />
-            <p>(En nombre d'heures)</p>
+            <p>(En nombre d'heures, sauf pour les mails)</p>
           </div>
           <table class='table d-flex col-lg-12'>
-            <tbody>
+            <tbody className='col-lg-3'>
               <tr>
                 <td>PC fixe</td>
                 <input
                   placeholder='PC fixe'
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
@@ -32,7 +32,7 @@ class Sondage extends React.Component {
                 <td>PC portable</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
@@ -42,17 +42,7 @@ class Sondage extends React.Component {
                 <td>Smartphone</td>
                 <input
                   placeholder=''
-                  type='number'
-                  id='name'
-                  className='name'
-                  size='10'
-                />
-              </tr>
-              <tr>
-                <td>Smart TV</td>
-                <input
-                  placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
@@ -62,47 +52,61 @@ class Sondage extends React.Component {
                 <td>Tablette</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
+                  id='name'
+                  className='name'
+                  size='10'
+                />
+              </tr>
+            </tbody>
+            <tbody className='col-lg-3'>
+              <tr>
+                <td>Smart TV</td>
+                <input
+                  placeholder=''
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
               <tr>
-                <td>Facebook</td>
+                <td>Console de jeux</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
               <tr>
-                <td>instagram</td>
+                <td>Réseaux sociaux</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
               <tr>
-                <td>Snapchat</td>
+                <td>Video / Streaming</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
+            </tbody>
+            <tbody className='col-lg-3'>
               <tr>
-                <td>Twitter</td>
+                <td>Recherche internet</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
@@ -112,37 +116,27 @@ class Sondage extends React.Component {
                 <td>Jeux en ligne</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
               <tr>
-                <td>Jeux hors ligne</td>
+                <td>nombre de mails reçus et envoyés</td>
                 <input
                   placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
                 />
               </tr>
               <tr>
-                <td>nombre d'emails reçus et envoyés</td>
+                <td>nombre de mails stockés</td>
                 <input
                   placeholder=''
-                  type='number'
-                  id='name'
-                  className='name'
-                  size='10'
-                />
-              </tr>
-              <tr>
-                <td>nombre d'emails stockés</td>
-                <input
-                  placeholder=''
-                  type='number'
+                  type='text'
                   id='name'
                   className='name'
                   size='10'
@@ -150,6 +144,9 @@ class Sondage extends React.Component {
               </tr>
             </tbody>
           </table>
+          <button type='button' class='btn btn-success'>
+            Je valide
+          </button>
         </div>
       </div>
     );
