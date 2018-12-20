@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -9,36 +9,41 @@ import {
   NavLink
 } from 'reactstrap';
 
-class App extends Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
+
     this.toggle = this.toggle.bind(this);
-    this.state = { isOpen: false };
+    this.state = {
+      isOpen: false
+    };
   }
 
   toggle() {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
-
   render() {
     return (
-      <Navbar dark expand='md'>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className='ml-5' navbar>
-            <NavItem>
-              <NavLink href='/Gamepage'>Jeu</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className='mt-2 ml-5 navigation' href='/Candydex'>
-                trial1
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
+      <div>
+        <Navbar color='success' light expand='md'>
+          <NavbarBrand>NOM EQUIPE</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className='ml-auto' navbar>
+              <NavItem>
+                <NavLink href='/'>Homepage</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href='/conseils'>Conséils</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     );
   }
 }
 
-export default App;
+export default Header;
