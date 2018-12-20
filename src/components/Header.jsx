@@ -26,21 +26,23 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="success" light expand="md">
-          <NavbarBrand>NOM EQUIPE</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/">Homepage</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/conseils">Conséils</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+      <div className="row">
+        <div className="col-12 bg-success">
+          <Navbar color="success" light expand="md">
+            <NavbarBrand>NOM EQUIPE</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="/">Homepage</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/conseils">Conséils</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
       </div>
     );
   }
