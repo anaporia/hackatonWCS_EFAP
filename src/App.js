@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Petition from './components/Petition';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends Component {
@@ -9,15 +8,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <CssBaseline>
-          <div className='App'>
-            <Petition />
-            <BrowserRouter>
-              <Switch>
-                <Route exact path='/' component='homepage' />
-                <Route path='/conseils' component='conseils' />
-              </Switch>
-            </BrowserRouter>
-          </div>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path='/' component='homepage' />
+              <Route path='/conseils' component='conseils' />
+            </Switch>
+          </BrowserRouter>
         </CssBaseline>
       </React.Fragment>
     );
