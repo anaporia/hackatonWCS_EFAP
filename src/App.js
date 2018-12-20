@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Sondage from './components/Sondage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component='homepage' />
             <Route path='/conseils' component='conseils' />
+            <Route path='/sondage' component={Sondage} />
           </Switch>
         </BrowserRouter>
       </div>
