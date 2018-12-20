@@ -117,11 +117,17 @@ class Petition extends React.Component {
 
   toggle = () => {
     if (this.state.modal === true) {
-      this.setState({ open: true });
       let api = axios;
+      let info = {
+        nom: this.state.nom,
+        prenom: this.state.prenom,
+        email: this.state.email
+      };
       api
-        .post('http://localhost:8080/utilisateur', this.state)
-        .then(response => {})
+        .post('http://localhost:59390/utilisateur', info)
+        .then(response => {
+          this.setState({ open: true });
+        })
         .catch(error => console.log(error));
       this.setState({
         nom: '',
