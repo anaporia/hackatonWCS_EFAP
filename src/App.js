@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import recommandations from "./components/recommandations";
+import React, { Component } from 'react';
+import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import recommandations from './components/recommandations';
+import Sondage from './components/Sondage';
 
 class App extends Component {
   render() {
@@ -11,8 +12,9 @@ class App extends Component {
         <CssBaseline>
           <BrowserRouter>
             <Switch>
-              <Route exact path="/" component="homepage" />
-              <Route path="/conseils" component={recommandations} />
+              <Route exact path='/' component='homepage' />
+              <Route path='/conseils' component={recommandations} />
+              <Route path='/sondage' component={Sondage} />
             </Switch>
           </BrowserRouter>
         </CssBaseline>
