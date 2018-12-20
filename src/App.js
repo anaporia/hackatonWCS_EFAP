@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import recommandations from "./components/recommandations";
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component="homepage" />
             <Route path="/conseils" component="conseils" />
+            <Route path="/recommandations" component={recommandations} />
           </Switch>
         </BrowserRouter>
       </div>
