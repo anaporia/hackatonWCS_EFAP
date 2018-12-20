@@ -93,7 +93,7 @@ class Petition extends React.Component {
       prenom: "",
       email: "",
       open: false,
-      compteur: null
+      compteur: 0
     };
   }
 
@@ -102,7 +102,7 @@ class Petition extends React.Component {
       .then(results => results.json())
       .then(data => {
         this.setState({
-          compteur: data
+          compteur: data[0].id
         });
       });
   }
@@ -175,6 +175,9 @@ class Petition extends React.Component {
                   {this.props.buttonLabel}Bien sur !
                 </Button>
               </CardBody>
+              <span className="compteur p-4 d-flex justify-content-center">
+                {this.state.compteur} utilisateurs ont répondu à l'enquête.
+              </span>
             </Card>
             <Snackbar
               anchorOrigin={{
