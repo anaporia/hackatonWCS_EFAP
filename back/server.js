@@ -40,7 +40,7 @@ app.post(`/utilisateur`, (req, res) => {
 
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
-            res.status(500).send('Internal server error');
+            res.status(500);
           }
         });
       });
@@ -51,12 +51,12 @@ app.post(`/utilisateur`, (req, res) => {
 
 app.get(`/sondage`, (req, res) => {
   connection.query(
-    `SELECT id FROM utilisateur ORDER BY id DESC`,
+    `SELECT count(id) as people FROM utilisateur`,
     (err, results) => {
       if (err) {
         res.status(500).send(`not found ${err}`);
       } else {
-        res.json(results);
+        res.send(results);
       }
     }
   );
