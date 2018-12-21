@@ -1,0 +1,8 @@
+.btn-success {
+  height: 35px;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
+  margin-top: 10%;
+}
