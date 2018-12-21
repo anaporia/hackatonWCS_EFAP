@@ -3,6 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 import YouTube from 'react-youtube';
 import { Button } from 'reactstrap';
+import Slider from './Slider';
+
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +32,7 @@ class Homepage extends React.Component {
     return (
       <div>
         <Header />
+        <Slider />
         <YouTube
           videoId='Q6ONgc6E1z0'
           className='player embed-responsive-item'

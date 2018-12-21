@@ -186,11 +186,20 @@ class Footer extends Component {
         <div className='wildfooter text-center mx-4'>
           Made with ❤ by
           <a
+            id='wilder'
             target='_blank'
             rel='noopener noreferrer'
             href='https://www.wildcodeschool.fr'
           >
             &nbsp;Wild Code School
+          </a>
+          <a
+            id='efap'
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.efap.com/ecole-de-communication/campus/3/ecole-communication-lille'
+          >
+            &nbsp;EFAP Lille
           </a>
         </div>
       </footer>

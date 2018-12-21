@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Slider.css';
 import {
   Carousel,
   CarouselItem,
@@ -9,19 +10,19 @@ import {
 
 const items = [
   {
-    src: 'https://via.placeholder.com/1200x400',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    src: './assets/ecology1_1200.png',
+    altText: 'Think green',
+    caption: 'Think green'
   },
   {
-    src: 'https://via.placeholder.com/1200x400',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    src: './assets/ecology2_1200.jpg',
+    altText: 'Think C02 emissions',
+    caption: 'Think CO2 emissions'
   },
   {
-    src: 'https://via.placeholder.com/1200x400',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src: './assets/ecology3_1200.jpeg',
+    altText: 'Think Green Tech',
+    caption: 'Think Green Tech'
   }
 ];
 
@@ -78,10 +79,7 @@ class Slider extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption
-            captionText={item.caption}
-            captionHeader={item.caption}
-          />
+          <CarouselCaption captionHeader={item.caption} />
         </CarouselItem>
       );
     });
