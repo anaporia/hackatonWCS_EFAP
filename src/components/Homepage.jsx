@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 import YouTube from 'react-youtube';
 class Homepage extends React.Component {
@@ -51,6 +52,7 @@ class Homepage extends React.Component {
             </div>
           </div>
         </div>
+        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
       </div>
     );
   }

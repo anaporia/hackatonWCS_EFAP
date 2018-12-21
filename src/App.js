@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import recommandations from './components/recommandations';
 import Sondage from './components/Sondage';
 import Homepage from './components/Homepage';
+
 class App extends Component {
   render() {
     return (
