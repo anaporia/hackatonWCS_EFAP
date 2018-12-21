@@ -166,7 +166,7 @@ class Petition extends React.Component {
               <CardImg
                 top
                 width="100%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+                src="https://piwee.net/wp-content/uploads/2017/04/pollution-internet-ecologie-infographie-4.jpg"
                 alt="Card image cap"
               />
               <CardBody>

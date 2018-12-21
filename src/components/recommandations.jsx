@@ -235,7 +235,7 @@ class recommandations extends Component {
   }
 
   componentDidMount() {
-    if (this.state.switch == false) {
+    if (this.state.switch === false) {
       setInterval(() => {
         let calculs = this.state.test;
 
