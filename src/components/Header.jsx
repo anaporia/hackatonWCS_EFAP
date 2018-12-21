@@ -27,26 +27,23 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className='py-2' color='success' light expand='md'>
-        <img alt='cook' src='./assets/logo2.png' id='logo' />
-        <NavbarBrand className='px-3'>NOM EQUIPE</NavbarBrand>
+      <Navbar className='py-2 bg-white' id='fontnavbar' expand='md'>
+        <NavbarBrand id='navbarbrand'>GREEN TECH</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse id='navjust' isOpen={this.state.isOpen} navbar>
           <Nav
-            bsstyle='pills'
+            navbar
             justified
             activekey={1}
             onSelect={key => this.handleSelect(key)}
-            className='ml-auto'
-            navbar
           >
-            <NavItem eventkey={1}>
+            <NavItem id='navitem1' eventkey={1}>
               <NavLink href='/'>Homepage</NavLink>
             </NavItem>
-            <NavItem eventkey={2}>
+            <NavItem id='navitem1' eventkey={2}>
               <NavLink href='/sondage'>Sondage</NavLink>
             </NavItem>
-            <NavItem eventkey={3}>
+            <NavItem id='navitem1' eventkey={3}>
               <NavLink href='/conseils'>Conséils</NavLink>
             </NavItem>
           </Nav>
