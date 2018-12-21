@@ -1,3 +1,21 @@
 #logo {
-  width: 5%;
+  width: 15%;
+}
+
+a {
+  color: #01bb53 !important;
+}
+
+#navbarbrand {
+  margin-left: 20%;
+  font-size: 22pt;
+  font-weight: bold;
+}
+
+#navjust {
+  margin-left: 10%;
+}
+
+#navitem1 {
+  margin-right: 30%;
 }
