@@ -1,15 +1,15 @@
 .head {
   padding-top: 6%;
   padding-bottom: 6%;
-  color: rgb(176, 36, 134);
+  /*color: rgb(176, 36, 134);*/
   font-size: 2em;
   text-align: center;
   font-weight: bold;
 }
 
 .tableStats {
-  color: rgb(176, 36, 134);
-  border: 4px rgb(176, 36, 134) solid;
+  /*color: rgb(176, 36, 134);*/
+  border: 4px /*rgb(176, 36, 134)*/ black solid;
 }
 
 .square {
@@ -17,19 +17,19 @@
 }
 
 .legendDiv {
-  color: rgb(176, 36, 134);
+  /*color: rgb(176, 36, 134);*/
   font-weight: bold;
   font-size: 2em;
   text-align: center;
 }
 
 .subSquare {
-  border: 1px rgb(176, 36, 134) solid;
+  border: 1px /*rgb(176, 36, 134)*/ black solid;
   min-height: 13vh;
 }
 
 .recommand {
-  color: rgb(176, 36, 134);
+  /*color: rgb(176, 36, 134);*/
   font-size: 2.2em;
   text-align: left;
 }
@@ -41,19 +41,19 @@
 }
 
 .cardRec {
-  border: 4px rgb(176, 36, 134) solid;
+  border: 4px /*rgb(176, 36, 134)*/ black solid;
   width: 200px;
   height: 200px;
 }
 
 .title {
-  color: rgb(176, 36, 134);
+  /*color: rgb(176, 36, 134);*/
   font-weight: bold;
   font-size: 1.3em;
 }
 
 .content {
-  color: rgb(176, 36, 134);
+  /*color: rgb(176, 36, 134);*/
   font-size: 1.2em;
 }
 
