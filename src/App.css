@@ -1,23 +1,17 @@
 .App {
   text-align: center;
 }
-
 .App-link {
   color: #61dafb;
 }
-.Youtube {
-  padding-top: 50px;
-  width: 100%;
+.youtube {
+  margin-top: 20px;
+  padding-top: 150px;
+  width: 40%;
 }
-.Board {
-  padding-top: 60px;
-}
-.Table {
+.table {
   border: 2px 2px solid black;
-  width: 80%;
-}
-.player {
-  width: 100%;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 640px) {
   .Board {
@@ -27,14 +21,20 @@
 .picture1 {
   width: 20%;
 }
-td {
-  padding-left: 80px;
-  padding-right: 80px;
+
+button {
+  padding-left: 20px;
+  padding-top: 100px;
 }
-.button {
-  margin-top: 6%;
-  margin-left: 80%;
+@media screen and (max-width: 640px) {
+  .Board {
+    margin-left: 50px;
+  }
 }
-.validation {
-  margin-left: 60px;
+
+.picture1 {
+  width: 15%;
+}
+.picture2 {
+  width: 8%;
 }
