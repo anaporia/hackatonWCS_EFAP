@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
 import "./sondage.css";
+import Footer from "./Footer";
 
 class Sondage extends React.Component {
   constructor() {
@@ -98,7 +99,7 @@ class Sondage extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid px-0'>
+      <div className="container-fluid px-0">
         <Header />
         <div className="container-fluid justify-content-center">
           <div className="">
@@ -243,6 +244,7 @@ class Sondage extends React.Component {
             </div>
           </div>
         </div>
+        <Footer buttonLabel="Legal mentions" px-0 mx-0 />
       </div>
     );
   }

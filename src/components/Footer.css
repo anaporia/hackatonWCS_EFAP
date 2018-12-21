@@ -7,10 +7,11 @@
 }
 
 .buttonLegalMentions {
-  background-color: black !important;
-  border: none !important;
+  background-color: white;
+  border: 1px #358e9c solid !important;
   height: 40px;
   align-self: center;
+  color: #0f6d25;
 }
 
 .wildfooter {

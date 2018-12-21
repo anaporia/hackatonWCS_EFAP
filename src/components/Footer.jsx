@@ -21,7 +21,10 @@ class Footer extends Component {
   render() {
     return (
       <footer className='footer d-flex justify-content-center py-3'>
-        <Button className='buttonLegalMentions' onClick={this.appearModal}>
+        <Button
+          className='buttonLegalMentions font-weight-bold'
+          onClick={this.appearModal}
+        >
           {this.props.buttonLabel}
         </Button>
         <Modal

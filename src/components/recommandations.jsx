@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Pie } from "react-chartjs-2";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./recommandations.css";
 import Petition from "./Petition";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Diagram = props => {
   let tab = [];
@@ -372,6 +372,7 @@ sur le disque dur, avant de couper l’alimentation.
             <Petition />
           </div>
         </div>
+        <Footer buttonLabel="Legal mentions" px-0 mx-0 />
       </div>
     );
   }
