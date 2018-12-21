@@ -6,12 +6,31 @@ import Petition from "./Petition";
 import Header from "./Header";
 
 const Diagram = props => {
+  let tab = [];
+  let tabName = [];
+  let color = [
+    "#aad7a9",
+    "#348b5",
+    "#3cd74b",
+    "#fd62d9",
+    "#cda889",
+    "#bfb1e5",
+    "#c5eff2",
+    "#3bf859",
+    "#5f8a01",
+    "#b604cf",
+    "#66354f",
+    "#78392a"
+  ];
+  props.states.map(data => tab.push(data.calcul));
+  props.states.map(data => tabName.push(data.name));
+
   const data = {
-    labels: ["Gentian", "Alice", "Alex"],
+    labels: tabName,
     datasets: [
       {
-        data: [2, 5, 11],
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
+        data: tab,
+        backgroundColor: color
       }
     ]
   };
@@ -71,7 +90,9 @@ const Tableau = props => {
 class recommandations extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
+      tabColor: [],
       objet: {},
       test: [
         {
@@ -332,7 +353,7 @@ sur le disque dur, avant de couper l’alimentation.
             </div>
           </div>
           <div className="col-lg-6">
-            <Diagram />
+            <Diagram states={this.state.test} />
           </div>
         </div>
         <div className="row">
