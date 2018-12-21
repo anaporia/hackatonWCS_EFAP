@@ -44,7 +44,7 @@ app.post(`/utilisateur`, (req, res) => {
           }
         });
       });
-      res.status(200).send(results);
+      res.status(200);
     }
   });
 });
