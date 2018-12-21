@@ -21,7 +21,7 @@
   width: 100%;
 }
 .Board {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .Table {
   border: 2px 2px solid black;
@@ -45,4 +45,7 @@ td {
 .button {
   margin-top: 6%;
   margin-left: 80%;
+}
+.validation {
+  margin-left: 60px;
 }

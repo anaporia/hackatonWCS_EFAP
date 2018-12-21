@@ -5,11 +5,24 @@ import YouTube from 'react-youtube';
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      consoJour: 0,
+      consoN: 0
+    };
   }
 
   handleClick = () => {
     this.props.history.push('/sondage');
+  };
+
+  consoJ = (min, max) => {
+    let number = Math.random();
+    this.setState({ consoJour: number });
+    this.consoN(min - 10, max - 20);
+  };
+  consoN = (min, max) => {
+    let number2 = Math.random;
+    this.setState({ consoN: number2 });
   };
 
   render() {
@@ -27,8 +40,7 @@ class Homepage extends React.Component {
                   <option>Italie</option>
                   <option>Espagne</option>
                 </select>
-              </div>
-              <div>
+
                 <label>Ville : </label>
                 <select>
                   <option>Lille</option>
@@ -40,39 +52,52 @@ class Homepage extends React.Component {
                   <option>Milan</option>
                   <option>Madrid</option>
                 </select>
+                <button className='validation' onClick={this.consoJ(47, 68)}>
+                  Valider
+                </button>
               </div>
 
               <table className=' Table text-center' border='1px'>
-                <tr>
-                  <th rowSpan='2' className='container'>
-                    <img
-                      className='picture1'
-                      src='./assets/sun.png'
-                      alt='cook'
-                    />
-                  </th>
-                  <td className='td'>Consommation KW</td>
-                </tr>
-
-                <tr>
-                  <td>Consommation KW</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th colSpan='2'>
+                      Consommations mondiales d'energie Jours / nuits
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th rowSpan='2' className='container'>
+                      <img
+                        className='picture1'
+                        src='./assets/sun.png'
+                        alt='cook'
+                      />
+                    </th>
+                    <td rowSpan='2' className='td'>
+                      {this.state.consoJ}
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot />
               </table>
 
               <table className=' Table text-center' border='1px'>
-                <tr>
-                  <th rowSpan='2' className='container'>
-                    <img
-                      className='picture1'
-                      src='./assets/moon.png'
-                      alt='cook'
-                    />
-                  </th>
-                  <td>Consommation KW</td>
-                </tr>
-                <tr>
-                  <td>Consommation KW</td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th rowSpan='2' className='container'>
+                      <img
+                        className='picture1'
+                        src='./assets/moon.png'
+                        alt='cook'
+                      />
+                    </th>
+                    <td rowSpan='2' className='td'>
+                      {this.state.consoN}
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot />
               </table>
             </div>
             <div className='Youtube col-lg-6'>
@@ -88,7 +113,7 @@ class Homepage extends React.Component {
                   <button
                     onClick={this.handleClick}
                     type='button'
-                    class='btn btn-primary'
+                    className='btn btn-primary'
                   >
                     Sondage
                   </button>
