@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import YouTube from 'react-youtube';
-
+import { Button } from 'reactstrap';
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ class Homepage extends React.Component {
   handleClick = () => {
     this.props.history.push('/sondage');
   };
-
+  /*
   consoJ = (min, max) => {
     let number = Math.random();
     this.setState({ consoJour: number });
@@ -24,15 +24,20 @@ class Homepage extends React.Component {
     let number2 = Math.random;
     this.setState({ consoN: number2 });
   };
-
+*/
   render() {
     return (
       <div>
         <Header />
-        <div className='container'>
-          <div className='row align-items-center'>
-            <div className='Board col-lg-6'>
-              <div>
+        <YouTube
+          videoId='Q6ONgc6E1z0'
+          className='player embed-responsive-item'
+          min-height='200vh'
+        />
+        <div className='container-fluid d-flex justify-content-center'>
+          <div className='row align-items-center col-lg-12'>
+            <div className='Board'>
+              <div className='col-lg-12'>
                 <label>Pays : </label>
                 <select>
                   <option>France</option>
@@ -52,17 +57,19 @@ class Homepage extends React.Component {
                   <option>Milan</option>
                   <option>Madrid</option>
                 </select>
-                <button className='validation' onClick={this.consoJ(47, 68)}>
+                <Button
+                  color='primary'
+                  size='sm' /*onClick={this.consoJ(47, 68)}*/
+                >
                   Valider
-                </button>
+                </Button>
               </div>
 
               <table className=' Table text-center' border='1px'>
                 <thead>
                   <tr>
-                    <th colSpan='2'>
-                      Consommations mondiales d'energie Jours / nuits
-                    </th>
+                    <th>Période de la journée</th>
+                    <th>Consommations en Kw/H</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,7 +82,7 @@ class Homepage extends React.Component {
                       />
                     </th>
                     <td rowSpan='2' className='td'>
-                      {this.state.consoJ}
+                      <b>47.2</b>
                     </td>
                   </tr>
                 </tbody>
@@ -93,20 +100,14 @@ class Homepage extends React.Component {
                       />
                     </th>
                     <td rowSpan='2' className='td'>
-                      {this.state.consoN}
+                      <b>47.2</b>
                     </td>
                   </tr>
                 </tbody>
                 <tfoot />
               </table>
             </div>
-            <div className='Youtube col-lg-6'>
-              <YouTube
-                videoId='Q6ONgc6E1z0'
-                className='player embed-responsive-item'
-                controls={1}
-              />
-            </div>
+
             <div className='container'>
               <div className='row'>
                 <div className='button'>
