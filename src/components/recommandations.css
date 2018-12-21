@@ -9,7 +9,6 @@
 
 .tableStats {
   /*color: rgb(176, 36, 134);*/
-  border: 4px /*rgb(176, 36, 134)*/ black solid;
 }
 
 .square {
@@ -29,7 +28,8 @@
 }
 
 .recommand {
-  /*color: rgb(176, 36, 134);*/
+  color: #01bb53;
+  font-weight: bold;
   font-size: 2.2em;
   text-align: left;
 }
@@ -41,20 +41,18 @@
 }
 
 .cardRec {
-  border: 4px /*rgb(176, 36, 134)*/ black solid;
   width: 200px;
   height: 200px;
 }
 
 .title {
-  /*color: rgb(176, 36, 134);*/
   font-weight: bold;
   font-size: 1.3em;
 }
 
 .content {
-  /*color: rgb(176, 36, 134);*/
-  font-size: 1.2em;
+  font-family: "Roboto";
+  font-size: 1em;
 }
 
 .paddSideA,
