@@ -65,7 +65,7 @@ const Tableau = props => {
       <div className="square col-12 d-flex justify-content-center">
         <div className="col-8 py-4 tableStats">
           <div className="col-12 py-2 d-flex justify-content-center">
-            <h4>
+            <h4 style={{ color: "#01bb53", fontWeight: "bold" }}>
               Depuis que vous êtes sur cette page, vous avez consommé en moyenne
               :
             </h4>
@@ -241,6 +241,13 @@ class recommandations extends Component {
 
         for (let i = 0; i < calculs.length; i++) {
           calculs[i].calculState = calculs[i].calculState + calculs[i].calcul;
+
+          let c = "";
+          for (let a = 0; a < 10; a++) {
+            c = c + String(calculs[i].calculState)[a];
+          }
+          c = Number(c);
+          calculs[i].calculState = c;
         }
         this.setState({
           test: calculs,
@@ -285,18 +292,20 @@ class recommandations extends Component {
           <div className="col-lg-6 paddSideA">
             <div className="row paddSide">
               {this.props.location.state.states.PCfixe !== null && (
-                <div className="col-lg-12 d-flex justify-content-center">
-                  <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2  d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
+                  <div className="col-lg-12 my-4 d-flex">
+                    <div className="col-lg-4 p-2  d-flex justify-content-center">
                       <img
                         src="https://png.pngtree.com/element_origin_min_pic/17/09/12/b0d90cc1ddf1e9575bc282324f4178fa.jpg"
                         alt=""
                         className="cardRec"
                       />
                     </div>
-                    <div className="9">
-                      <div className="12 title">{this.state.cons[0].name}</div>
-                      <div className="12 content p-2">
+                    <div className="col-lg-9">
+                      <div className="col-12 title">
+                        {this.state.cons[0].name}
+                      </div>
+                      <div className="col-12 content p-2">
                         {this.state.cons[0].content}
                       </div>
                     </div>
@@ -304,18 +313,20 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.PCportable !== null && (
-                <div className="col-lg-12 d-flex justify-content-center">
-                  <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
+                  <div className="col-lg-12 my-4 d-flex">
+                    <div className="col-lg-4 p-2 d-flex justify-content-center">
                       <img
                         src="https://png.pngtree.com/element_origin_min_pic/17/01/08/30aae9d5e15e79b240ac24ef3da14ac3.jpg"
                         alt=""
                         className="cardRec"
                       />
                     </div>
-                    <div className="9">
-                      <div className="12 title">{this.state.cons[1].name}</div>
-                      <div className="12 content p-2">
+                    <div className="col-lg-9">
+                      <div className="col-12 title">
+                        {this.state.cons[1].name}
+                      </div>
+                      <div className="col-12 content p-2">
                         {this.state.cons[1].content}
                       </div>
                     </div>
@@ -323,9 +334,9 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.email !== null && (
-                <div className="col-lg-12 d-flex justify-content-center">
-                  <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center     borderToGet">
+                  <div className="col-12 my-4 d-flex">
+                    <div className="col-lg-4 p-2 d-flex justify-content-center">
                       <img
                         src="https://www.freeiconspng.com/uploads/email-marketing-icon-email-icon-1.png"
                         alt=""
@@ -333,8 +344,10 @@ class recommandations extends Component {
                       />
                     </div>
                     <div className="9">
-                      <div className="12 title">{this.state.cons[2].name}</div>
-                      <div className="12 content p-2">
+                      <div className="col-12 title">
+                        {this.state.cons[2].name}
+                      </div>
+                      <div className="col-12 content p-2">
                         {this.state.cons[2].content}
                       </div>
                     </div>
@@ -342,9 +355,9 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.isearch !== null && (
-                <div className="col-lg-12 d-flex justify-content-center">
-                  <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2 d-flex  justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
+                  <div className="col-lg-12 my-4 d-flex">
+                    <div className="col-lg-4 p-2 d-flex  justify-content-center">
                       <img
                         src="https://img.icons8.com/metro/1600/search.png"
                         alt=""
@@ -352,8 +365,10 @@ class recommandations extends Component {
                       />
                     </div>
                     <div className="9">
-                      <div className="12 title">{this.state.cons[3].name}</div>
-                      <div className="12 content p-2">
+                      <div className="col-12 title">
+                        {this.state.cons[3].name}
+                      </div>
+                      <div className="col-12 content p-2">
                         {this.state.cons[3].content}
                       </div>
                     </div>
@@ -361,9 +376,9 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.streaming !== null && (
-                <div className="col-lg-12 d-flex justify-content-center">
-                  <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center   borderToGet">
+                  <div className="col-lg-12 my-4 d-flex">
+                    <div className="col-lg-4 p-2 d-flex justify-content-center">
                       <img
                         src="https://img.icons8.com/metro/1600/widescreen-tv.png"
                         alt=""
@@ -371,8 +386,10 @@ class recommandations extends Component {
                       />
                     </div>
                     <div className="9">
-                      <div className="12 title">{this.state.cons[4].name}</div>
-                      <div className="12 content p-2">
+                      <div className="col-12 title">
+                        {this.state.cons[4].name}
+                      </div>
+                      <div className="col-12 content p-2">
                         {this.state.cons[4].content}
                       </div>
                     </div>
