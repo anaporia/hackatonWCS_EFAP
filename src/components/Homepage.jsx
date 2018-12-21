@@ -8,21 +8,33 @@ class Homepage extends React.Component {
       <div>
         <Header />
         <div className='container'>
-          <div className='row'>
-            <div className='col-lg-6'>
-              <table border='1px' width='80%'>
+          <div className='row align-items-center'>
+            <div className='Board col-lg-6'>
+              <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2'>image</th>
-                  <td>Consommation KW</td>
+                  <th rowspan='2' className='container'>
+                    <img
+                      className='picture1'
+                      src='./assets/sun.png'
+                      alt='cook'
+                    />
+                  </th>
+                  <td className='td'>Consommation KW</td>
                 </tr>
                 <tr>
                   <td>Consommation KW</td>
                 </tr>
               </table>
 
-              <table border='1px' width='80%'>
+              <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2'>image</th>
+                  <th rowspan='2' className='container'>
+                    <img
+                      className='picture1'
+                      src='./assets/moon.png'
+                      alt='cook'
+                    />
+                  </th>
                   <td>Consommation KW</td>
                 </tr>
                 <tr>
@@ -30,10 +42,11 @@ class Homepage extends React.Component {
                 </tr>
               </table>
             </div>
-            <div className='col-lg-6  col-md-10 offset-md-1 mt-5 embed-responsive embed-responsive-16by9 youtube-cadre'>
+            <div className='Youtube col-lg-6'>
               <YouTube
                 videoId='Fki8FxTryuI'
-                className='embed-responsive-item'
+                className='player embed-responsive-item'
+                autoPlayVideo={true}
               />
             </div>
           </div>
