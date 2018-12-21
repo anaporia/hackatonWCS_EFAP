@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Pie } from "react-chartjs-2";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./recommandations.css";
 import Petition from "./Petition";
@@ -38,7 +39,7 @@ const Diagram = props => {
   const options = {
     title: {
       display: true,
-      text: "Chore Distribution for this Month",
+      text: "La consommation de Co2 de tes appareils",
       fontFamily: "Roboto",
       fontSize: 20
     },
@@ -51,7 +52,7 @@ const Diagram = props => {
   };
 
   return (
-    <div className="col-lg-6 d-flex justify-content-center">
+    <div className="col-lg-10 d-flex justify-content-center">
       <Pie data={data} options={options} height={10} width={10} />
     </div>
   );
@@ -61,8 +62,8 @@ const Tableau = props => {
   return (
     <React.Fragment>
       <div className="square col-12 d-flex justify-content-center">
-        <div className="col-8 tableStats">
-          <div className="col-12 py-2">
+        <div className="col-8 py-4 tableStats">
+          <div className="col-12 py-2 d-flex justify-content-center">
             <h4>Depuis que vous êtes sur cette page :</h4>
           </div>
           <div className="row alignBlock col-12 py-2">
@@ -73,8 +74,8 @@ const Tableau = props => {
                     <div className="col-12 py-2 d-flex justify-content-center">
                       {data.name}
                     </div>
-                    <div className="col-12 py-4 number d-flex justify-content-center">
-                      {data.calculState}
+                    <div className="col-12 py-4 number">
+                      {data.calculState + " Kg de Co2"}
                     </div>
                   </div>
                 );
@@ -92,6 +93,7 @@ class recommandations extends Component {
     super(props);
 
     this.state = {
+      switch: false,
       tabColor: [],
       objet: {},
       test: [
@@ -160,13 +162,13 @@ class recommandations extends Component {
       ],
       cons: [
         {
-          name: "PCfix",
+          name: "PC fixe",
           content:
             "Choisir un pc portable car il consomme 4 fois moins d’électricité qu’un ordinateur fixe pour des performances équivalentes.",
           ref: "PCfixe"
         },
         {
-          name: "PCportable",
+          name: "PC portable",
           content: `Utiliser au maximum votre batterie au lieu de le brancher (tout en pensant à ne pas laisser le chargeur branché dans la prise). \
             Choisissez votre ordinateur car vous n’avez pas besoin d’un pc surpuissant et donc très consommateur d’électricité pour regarder des mails, \
             des films ou discuter sur internet.`,
@@ -246,8 +248,16 @@ sur le disque dur, avant de couper l’alimentation.
             façon de consommer d'une manière plus maitrisée !
           </div>
         </div>
+
         <div className="row">
           <Tableau test={this.state.test} />
+        </div>
+        <div className="row d-flex justify-content-center">
+          <div className="col-8 legendDiv py-5 mt-5">
+            Vous trouvez que les compteurs s'affolent vite ? Alors consultez
+            tout de suite les recommandations que nous avons selectionnées pour
+            vous afin de réduire votre consommation de CO2 !
+          </div>
         </div>
         <div className="row py-5">
           <div className="col-12 recommand py-5 pl-5">Nos recommandations</div>
@@ -256,7 +266,7 @@ sur le disque dur, avant de couper l’alimentation.
           <div className="col-lg-6 paddSideA">
             <div className="row paddSide">
               {this.props.location.state.states.PCfixe !== null && (
-                <div className="col-lg-6 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
                     <div className="col-4 p-2">
                       <img
@@ -275,7 +285,7 @@ sur le disque dur, avant de couper l’alimentation.
                 </div>
               )}
               {this.props.location.state.states.PCportable !== null && (
-                <div className="col-lg-6 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
                     <div className="col-4 p-2">
                       <img
@@ -294,7 +304,7 @@ sur le disque dur, avant de couper l’alimentation.
                 </div>
               )}
               {this.props.location.state.states.email !== null && (
-                <div className="col-lg-6 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
                     <div className="col-4 p-2">
                       <img
@@ -313,7 +323,7 @@ sur le disque dur, avant de couper l’alimentation.
                 </div>
               )}
               {this.props.location.state.states.isearch !== null && (
-                <div className="col-lg-6 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
                     <div className="col-4 p-2">
                       <img
@@ -332,7 +342,7 @@ sur le disque dur, avant de couper l’alimentation.
                 </div>
               )}
               {this.props.location.state.states.streaming !== null && (
-                <div className="col-lg-6 d-flex justify-content-center">
+                <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
                     <div className="col-4 p-2">
                       <img
