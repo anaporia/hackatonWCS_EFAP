@@ -1,17 +1,41 @@
 .footer {
-  background-color: #28a745;
+  background-color: #3bb157;
   text-align: center;
   color: white;
   width: 100%;
-  height: 80px;
+  height: 60px;
+  font-size: 16pt;
+}
+
+a:active {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+#wilder {
+  color: white !important;
+}
+
+#efap {
+  color: white !important;
 }
 
 .buttonLegalMentions {
-  background-color: white;
-  border: 1px #358e9c solid !important;
+  font-size: 16pt;
+  background-color: #3bb157;
+  border: none !important;
   height: 40px;
   align-self: center;
-  color: #0f6d25;
+  color: white;
+}
+
+.buttonLegalMentions:hover {
+  background-color: white;
+  color: #3bb157;
+  border: none !important;
 }
 
 .wildfooter {
@@ -44,4 +68,8 @@
 
 a {
   color: black;
+}
+
+#efap {
+  margin-left: 1cm;
 }

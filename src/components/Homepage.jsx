@@ -3,6 +3,9 @@ import Header from './Header';
 import Footer from './Footer';
 import YouTube from 'react-youtube';
 import { Table } from 'reactstrap';
+
+import Slider from './Slider';
+
 class Homepage extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +23,7 @@ class Homepage extends React.Component {
     return (
       <div>
         <Header />
+        <Slider />
         <div className='container1  mb-lg-5 mt-lg-5 embed-responsive-16by9'>
           <div className='row'>
             <div className='youtube2 col-lg-6 embed-responsive embed-responsive-16by9'>
