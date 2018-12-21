@@ -64,7 +64,10 @@ const Tableau = props => {
       <div className="square col-12 d-flex justify-content-center">
         <div className="col-8 py-4 tableStats">
           <div className="col-12 py-2 d-flex justify-content-center">
-            <h4>Depuis que vous êtes sur cette page :</h4>
+            <h4>
+              Depuis que vous êtes sur cette page, vous avez consommé en moyenne
+              :
+            </h4>
           </div>
           <div className="row alignBlock col-12 py-2">
             {props.test.map(data => {
@@ -98,64 +101,64 @@ class recommandations extends Component {
       objet: {},
       test: [
         {
-          name: "Ordi fixe",
+          name: "Ordi fixe :",
           calcul: (props.location.state.states.PCfixe * 0.06472603) / 864000,
           calculState: 0
         },
         {
-          name: "Ordi portable",
+          name: "Ordi portable :",
           calcul:
             (props.location.state.states.PCportable * 0.05787671) / 864000,
           calculState: 0
         },
         {
-          name: "Smartphone",
+          name: "Smartphone :",
           calcul:
             (props.location.state.states.smartphone * 0.02731668) / 864000,
           calculState: 0
         },
         {
-          name: "Télé connecté",
+          name: "Télé connecté :",
           calcul: (props.location.state.states.tablette * 0.34240286) / 864000,
           calculState: 0
         },
         {
-          name: "Tablettes",
+          name: "Tablettes :",
           calcul: (props.location.state.states.smartTV * 0.09315068) / 864000,
           calculState: 0
         },
         {
-          name: "Console de jeux de salon",
+          name: "Console de jeux de salon :",
           calcul: (props.location.state.states.console * 0.13972603) / 864000,
           calculState: 0
         },
         {
-          name: "Réseaux sociaux",
+          name: "Réseaux sociaux :",
           calcul: (props.location.state.states.social * 0.255) / 864000,
           calculState: 0
         },
         {
-          name: "Vidéo / Streaming",
+          name: "Vidéo / Streaming :",
           calcul: (props.location.state.states.streaming * 0.51) / 864000,
           calculState: 0
         },
         {
-          name: "Jeux en ligne",
+          name: "Jeux en ligne :",
           calcul: (props.location.state.states.isearch * 0.51) / 864000,
           calculState: 0
         },
         {
-          name: "Recherches internet",
+          name: "Recherches internet :",
           calcul: (props.location.state.states.online * 0.007) / 864000,
           calculState: 0
         },
         {
-          name: "Nb de mails reçus / envoyés",
+          name: "Nb de mails reçus / envoyés :",
           calcul: (props.location.state.states.email * 0.02) / 864000,
           calculState: 0
         },
         {
-          name: "Nb de mails stockés",
+          name: "Nb de mails stockés :",
           calcul: (props.location.state.states.emailStorage * 0.01) / 864000,
           calculState: 0
         }
@@ -268,9 +271,9 @@ sur le disque dur, avant de couper l’alimentation.
               {this.props.location.state.states.PCfixe !== null && (
                 <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2">
+                    <div className="col-4 p-2  d-flex justify-content-center">
                       <img
-                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        src="https://png.pngtree.com/element_origin_min_pic/17/09/12/b0d90cc1ddf1e9575bc282324f4178fa.jpg"
                         alt=""
                         className="cardRec"
                       />
@@ -287,9 +290,9 @@ sur le disque dur, avant de couper l’alimentation.
               {this.props.location.state.states.PCportable !== null && (
                 <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2">
+                    <div className="col-4 p-2 d-flex justify-content-center">
                       <img
-                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        src="https://png.pngtree.com/element_origin_min_pic/17/01/08/30aae9d5e15e79b240ac24ef3da14ac3.jpg"
                         alt=""
                         className="cardRec"
                       />
@@ -306,9 +309,9 @@ sur le disque dur, avant de couper l’alimentation.
               {this.props.location.state.states.email !== null && (
                 <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2">
+                    <div className="col-4 p-2 d-flex justify-content-center">
                       <img
-                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        src="https://www.freeiconspng.com/uploads/email-marketing-icon-email-icon-1.png"
                         alt=""
                         className="cardRec"
                       />
@@ -325,9 +328,9 @@ sur le disque dur, avant de couper l’alimentation.
               {this.props.location.state.states.isearch !== null && (
                 <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2">
+                    <div className="col-4 p-2 d-flex  justify-content-center">
                       <img
-                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        src="https://img.icons8.com/metro/1600/search.png"
                         alt=""
                         className="cardRec"
                       />
@@ -344,9 +347,9 @@ sur le disque dur, avant de couper l’alimentation.
               {this.props.location.state.states.streaming !== null && (
                 <div className="col-lg-12 d-flex justify-content-center">
                   <div className="col-12 my-4 d-flex border">
-                    <div className="col-4 p-2">
+                    <div className="col-4 p-2 d-flex justify-content-center">
                       <img
-                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        src="https://img.icons8.com/metro/1600/widescreen-tv.png"
                         alt=""
                         className="cardRec"
                       />
