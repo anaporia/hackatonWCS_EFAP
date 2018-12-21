@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import './Header.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -26,8 +27,9 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className='py-4' color='success' light expand='md'>
-        <NavbarBrand>NOM EQUIPE</NavbarBrand>
+      <Navbar className='py-2' color='success' light expand='md'>
+        <img alt='cook' src='./assets/logo2.png' id='logo' />
+        <NavbarBrand className='px-3'>NOM EQUIPE</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav
