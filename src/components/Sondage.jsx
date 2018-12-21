@@ -99,13 +99,15 @@ class Sondage extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid px-0'>
+      <div className='container-fluid mb-0 px-0'>
         <Header />
-        <div className='container-fluid text-center'>
-          <div className=''>
+        <div className='container-fluid text-center pt-lg-5'>
+          <div className='mb-lg-5 pb-lg-5'>
             <h3>MA CONSOMMATION</h3>
             <br />
-            <p>(En nombre d'heures, sauf pour les mails)</p>
+            <p>
+              (En nombre d'heures d'utilisation et nombre de mails par jour)
+            </p>
           </div>
           <div className='row'>
             <table class='table d-flex col-lg-3'>
@@ -113,7 +115,7 @@ class Sondage extends React.Component {
                 <tr>
                   <td>PC fixe</td>
                   <input
-                    placeholder='PC fixe'
+                    placeholder=''
                     type='tel'
                     value={this.state.PCfixe}
                     onChange={this.updatePCfixe}
