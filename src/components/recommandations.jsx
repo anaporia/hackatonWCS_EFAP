@@ -1,28 +1,28 @@
-import React, { Component } from "react";
-import { Pie } from "react-chartjs-2";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./recommandations.css";
-import Petition from "./Petition";
-import Header from "./Header";
-import Footer from "./Footer";
-import { Redirect } from "react-router-dom";
+import React, { Component } from 'react';
+import { Pie } from 'react-chartjs-2';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './recommandations.css';
+import Petition from './Petition';
+import Header from './Header';
+import Footer from './Footer';
+import { Redirect } from 'react-router-dom';
 
 const Diagram = props => {
   let tab = [];
   let tabName = [];
   let color = [
-    "#aad7a9",
-    "#348b5",
-    "#3cd74b",
-    "#fd62d9",
-    "#cda889",
-    "#bfb1e5",
-    "#c5eff2",
-    "#3bf859",
-    "#5f8a01",
-    "#b604cf",
-    "#66354f",
-    "#78392a"
+    '#aad7a9',
+    '#348b5',
+    '#3cd74b',
+    '#fd62d9',
+    '#cda889',
+    '#bfb1e5',
+    '#c5eff2',
+    '#3bf859',
+    '#5f8a01',
+    '#b604cf',
+    '#66354f',
+    '#78392a'
   ];
   props.states.map(data => tab.push(data.calcul));
   props.states.map(data => tabName.push(data.name));
@@ -40,12 +40,12 @@ const Diagram = props => {
   const options = {
     title: {
       display: true,
-      text: "La consommation de Co2 de tes appareils",
-      fontFamily: "Roboto",
+      text: 'La consommation de Co2 de tes appareils',
+      fontFamily: 'Roboto',
       fontSize: 20
     },
     legend: {
-      position: "left",
+      position: 'left',
       labels: {
         fontSize: 20
       }
@@ -53,7 +53,7 @@ const Diagram = props => {
   };
 
   return (
-    <div className="col-lg-10 d-flex justify-content-center">
+    <div className='col-lg-10 d-flex justify-content-center'>
       <Pie data={data} options={options} height={10} width={10} />
     </div>
   );
@@ -62,28 +62,28 @@ const Diagram = props => {
 const Tableau = props => {
   return (
     <React.Fragment>
-      <div className="square col-12 d-flex justify-content-center">
-        <div className="col-8 py-4 tableStats">
-          <div className="col-12 py-2 d-flex justify-content-center">
-            <h4 style={{ color: "#01bb53", fontWeight: "bold" }}>
+      <div className='square col-12 d-flex justify-content-center'>
+        <div className='col-8 py-4 tableStats'>
+          <div className='col-12 py-2 d-flex justify-content-center'>
+            <h4 style={{ color: '#01bb53', fontWeight: 'bold' }}>
               Depuis que vous êtes sur cette page, vous avez consommé en moyenne
               :
             </h4>
           </div>
-          <div className="row alignBlock col-12 py-2">
+          <div className='row alignBlock col-12 py-2'>
             {props.test.map(data => {
               if (data.calculState !== 0) {
-                let c = "";
+                let c = '';
                 for (let a = 0; a < 10; a++) {
                   c = c + String(data.calculState)[a];
                 }
                 c = Number(c);
                 return (
-                  <div className="col-lg-2 m-2 subSquare">
-                    <div className="col-12 py-2 d-flex justify-content-center">
+                  <div className='col-lg-2 m-2 subSquare'>
+                    <div className='col-12 py-2 d-flex justify-content-center'>
                       {data.name}
                     </div>
-                    <div className="col-12 py-4 number">{c + " Kg de Co2"}</div>
+                    <div className='col-12 py-4 number'>{c + ' Kg de Co2'}</div>
                   </div>
                 );
               }
@@ -104,85 +104,85 @@ class recommandations extends Component {
         objet: {},
         test: [
           {
-            name: "Ordi fixe :",
+            name: 'Ordi fixe :',
             calcul: (props.location.state.states.PCfixe * 0.06472603) / 864000,
             calculState: 0
           },
           {
-            name: "Ordi portable :",
+            name: 'Ordi portable :',
             calcul:
               (props.location.state.states.PCportable * 0.05787671) / 864000,
             calculState: 0
           },
           {
-            name: "Smartphone :",
+            name: 'Smartphone :',
             calcul:
               (props.location.state.states.smartphone * 0.02731668) / 864000,
             calculState: 0
           },
           {
-            name: "Télé connecté :",
+            name: 'Télé connecté :',
             calcul:
               (props.location.state.states.tablette * 0.34240286) / 864000,
             calculState: 0
           },
           {
-            name: "Tablettes :",
+            name: 'Tablettes :',
             calcul: (props.location.state.states.smartTV * 0.09315068) / 864000,
             calculState: 0
           },
           {
-            name: "Console de jeux de salon :",
+            name: 'Console de jeux de salon :',
             calcul: (props.location.state.states.console * 0.13972603) / 864000,
             calculState: 0
           },
           {
-            name: "Réseaux sociaux :",
+            name: 'Réseaux sociaux :',
             calcul: (props.location.state.states.social * 0.255) / 864000,
             calculState: 0
           },
           {
-            name: "Vidéo / Streaming :",
+            name: 'Vidéo / Streaming :',
             calcul: (props.location.state.states.streaming * 0.51) / 864000,
             calculState: 0
           },
           {
-            name: "Jeux en ligne :",
+            name: 'Jeux en ligne :',
             calcul: (props.location.state.states.isearch * 0.51) / 864000,
             calculState: 0
           },
           {
-            name: "Recherches internet :",
+            name: 'Recherches internet :',
             calcul: (props.location.state.states.online * 0.007) / 864000,
             calculState: 0
           },
           {
-            name: "Nb de mails reçus / envoyés :",
+            name: 'Nb de mails reçus / envoyés :',
             calcul: (props.location.state.states.email * 0.02) / 864000,
             calculState: 0
           },
           {
-            name: "Nb de mails stockés :",
+            name: 'Nb de mails stockés :',
             calcul: (props.location.state.states.emailStorage * 0.01) / 864000,
             calculState: 0
           }
         ],
         cons: [
           {
-            name: "PC fixe",
+            name: 'PC fixe',
             content:
-              "Choisir un pc portable car il consomme 4 fois moins d’électricité qu’un ordinateur fixe pour des performances équivalentes.",
-            ref: "PCfixe"
+              'Choisir un pc portable car il consomme 4 fois moins d’électricité qu’un ordinateur fixe pour des performances équivalentes.',
+            ref: 'PCfixe'
           },
           {
-            name: "PC portable",
+            name: 'PC portable',
             content: `Utiliser au maximum votre batterie au lieu de le brancher (tout en pensant à ne pas laisser le chargeur branché dans la prise). \
               Choisissez votre ordinateur car vous n’avez pas besoin d’un pc surpuissant et donc très consommateur d’électricité pour regarder des mails, \
               des films ou discuter sur internet.`,
-            ref: "PCportable"
+            ref: 'PCportable'
           },
           {
-            name: "Mail",
+            name: 'Mail',
             content: `Réduisez votre temps de lecture « en ligne ». \
               Optimiser la taille de vos documents en pièce jointe (favorisez les fichiers compressés, les images \
               en PDF basse résolution, les liens hypertexte à la place d’un document, limiter les photos et leur \
@@ -194,10 +194,10 @@ class recommandations extends Component {
               Désabonnez-vous des newsletters que vous ne lisez pas \
               Limiter le nombre de destinataires.
               `,
-            ref: "email"
+            ref: 'email'
           },
           {
-            name: "Recherches",
+            name: 'Recherches',
             content: `Installer un bloqueur de publicités, évitez ainsi l’ouverture de fenêtres et le lancement de vidéos
             non désirés. \
             Simplifier vos requêtes Web, privilégiez pour cela la mise en place de vos sites “préférés” sur la
@@ -205,10 +205,10 @@ class recommandations extends Component {
             Diminuer le nombre de pages consultées en utilisant des mots clés précis lors de nos recherches \
             Saisissez quand c’est possible, directement l’adresse du site dans la barre de navigation
               `,
-            ref: "isearch"
+            ref: 'isearch'
           },
           {
-            name: "Ecran",
+            name: 'Ecran',
             content: `Le premier stade de « veille » est l’économiseur d’écran, qui s’active spontanément dès qu’on
             laisse le PC inutilisé. Dans ce mode, le PC consomme autant qu’en fonctionnement normal …
             aucun intérêt. Il est conseillé de supprimer l’économiseur d’écran. \
@@ -225,7 +225,7 @@ class recommandations extends Component {
   « hibernation ». Dans ce mode, l’ordinateur recopie la totalité des données de la mémoire vive
   sur le disque dur, avant de couper l’alimentation.
               `,
-            ref: "streaming"
+            ref: 'streaming'
           }
         ],
         switch: false
@@ -255,14 +255,14 @@ class recommandations extends Component {
 
   render() {
     if (this.state.switch) {
-      return <Redirect to="/sondage" from="/conseils" />;
+      return <Redirect to='/sondage' from='/conseils' />;
     }
 
     return (
-      <div className="container-fluid px-0">
+      <div className='container-fluid px-0'>
         <Header />
-        <div className="row d-flex justify-content-center">
-          <div className="col-8 head">
+        <div className='row d-flex justify-content-center'>
+          <div className='col-8 head'>
             Parce qu'on ne pourra jamais se passer de nos séries préférées, de
             nos conversations avec nos amis, de nos moments d'égarement sur
             Youtube, ou de nos recherches sur internet...
@@ -271,37 +271,37 @@ class recommandations extends Component {
           </div>
         </div>
 
-        <div className="row">
+        <div className='row'>
           <Tableau test={this.state.test} />
         </div>
-        <div className="row d-flex justify-content-center">
-          <div className="col-8 legendDiv py-5 mt-5">
+        <div className='row d-flex justify-content-center'>
+          <div className='col-8 legendDiv py-5 mt-5'>
             Vous trouvez que les compteurs s'affolent vite ? Alors consultez
             tout de suite les recommandations que nous avons selectionnées pour
             vous afin de réduire votre consommation de CO2 !
           </div>
         </div>
-        <div className="row py-5">
-          <div className="col-12 recommand py-5 pl-5">Nos recommandations</div>
+        <div className='row py-5'>
+          <div className='col-12 recommand py-5 pl-5'>Nos recommandations</div>
         </div>
-        <div className="row">
-          <div className="col-lg-6 paddSideA">
-            <div className="row paddSide">
+        <div className='row'>
+          <div className='col-lg-6 paddSideA'>
+            <div className='row paddSide'>
               {this.props.location.state.states.PCfixe !== null && (
-                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
-                  <div className="col-lg-12 my-4 d-flex">
-                    <div className="col-lg-4 p-2  d-flex justify-content-center">
+                <div className='col-lg-12 d-flex justify-content-center    borderToGet'>
+                  <div className='col-lg-12 my-4 d-flex'>
+                    <div className='col-lg-4 p-2  d-flex justify-content-center'>
                       <img
-                        src="https://png.pngtree.com/element_origin_min_pic/17/09/12/b0d90cc1ddf1e9575bc282324f4178fa.jpg"
-                        alt=""
-                        className="cardRec"
+                        src='https://png.pngtree.com/element_origin_min_pic/17/09/12/b0d90cc1ddf1e9575bc282324f4178fa.jpg'
+                        alt=''
+                        className='cardRec'
                       />
                     </div>
-                    <div className="col-lg-9">
-                      <div className="col-12 title">
+                    <div className='col-lg-9'>
+                      <div className='col-12 title'>
                         {this.state.cons[0].name}
                       </div>
-                      <div className="col-12 content p-2">
+                      <div className='col-12 content p-2'>
                         {this.state.cons[0].content}
                       </div>
                     </div>
@@ -309,20 +309,20 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.PCportable !== null && (
-                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
-                  <div className="col-lg-12 my-4 d-flex">
-                    <div className="col-lg-4 p-2 d-flex justify-content-center">
+                <div className='col-lg-12 d-flex justify-content-center    borderToGet'>
+                  <div className='col-lg-12 my-4 d-flex'>
+                    <div className='col-lg-4 p-2 d-flex justify-content-center'>
                       <img
-                        src="https://png.pngtree.com/element_origin_min_pic/17/01/08/30aae9d5e15e79b240ac24ef3da14ac3.jpg"
-                        alt=""
-                        className="cardRec"
+                        src='https://png.pngtree.com/element_origin_min_pic/17/01/08/30aae9d5e15e79b240ac24ef3da14ac3.jpg'
+                        alt=''
+                        className='cardRec'
                       />
                     </div>
-                    <div className="col-lg-9">
-                      <div className="col-12 title">
+                    <div className='col-lg-9'>
+                      <div className='col-12 title'>
                         {this.state.cons[1].name}
                       </div>
-                      <div className="col-12 content p-2">
+                      <div className='col-12 content p-2'>
                         {this.state.cons[1].content}
                       </div>
                     </div>
@@ -330,20 +330,20 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.email !== null && (
-                <div className="col-lg-12 d-flex justify-content-center     borderToGet">
-                  <div className="col-12 my-4 d-flex">
-                    <div className="col-lg-4 p-2 d-flex justify-content-center">
+                <div className='col-lg-12 d-flex justify-content-center     borderToGet'>
+                  <div className='col-12 my-4 d-flex'>
+                    <div className='col-lg-4 p-2 d-flex justify-content-center'>
                       <img
-                        src="https://www.freeiconspng.com/uploads/email-marketing-icon-email-icon-1.png"
-                        alt=""
-                        className="cardRec"
+                        src='https://www.freeiconspng.com/uploads/email-marketing-icon-email-icon-1.png'
+                        alt=''
+                        className='cardRec'
                       />
                     </div>
-                    <div className="9">
-                      <div className="col-12 title">
+                    <div className='9'>
+                      <div className='col-12 title'>
                         {this.state.cons[2].name}
                       </div>
-                      <div className="col-12 content p-2">
+                      <div className='col-12 content p-2'>
                         {this.state.cons[2].content}
                       </div>
                     </div>
@@ -351,20 +351,20 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.isearch !== null && (
-                <div className="col-lg-12 d-flex justify-content-center    borderToGet">
-                  <div className="col-lg-12 my-4 d-flex">
-                    <div className="col-lg-4 p-2 d-flex  justify-content-center">
+                <div className='col-lg-12 d-flex justify-content-center    borderToGet'>
+                  <div className='col-lg-12 my-4 d-flex'>
+                    <div className='col-lg-4 p-2 d-flex  justify-content-center'>
                       <img
-                        src="https://img.icons8.com/metro/1600/search.png"
-                        alt=""
-                        className="cardRec"
+                        src='https://img.icons8.com/metro/1600/search.png'
+                        alt=''
+                        className='cardRec'
                       />
                     </div>
-                    <div className="9">
-                      <div className="col-12 title">
+                    <div className='9'>
+                      <div className='col-12 title'>
                         {this.state.cons[3].name}
                       </div>
-                      <div className="col-12 content p-2">
+                      <div className='col-12 content p-2'>
                         {this.state.cons[3].content}
                       </div>
                     </div>
@@ -372,20 +372,20 @@ class recommandations extends Component {
                 </div>
               )}
               {this.props.location.state.states.streaming !== null && (
-                <div className="col-lg-12 d-flex justify-content-center   borderToGet">
-                  <div className="col-lg-12 my-4 d-flex">
-                    <div className="col-lg-4 p-2 d-flex justify-content-center">
+                <div className='col-lg-12 d-flex justify-content-center   borderToGet'>
+                  <div className='col-lg-12 my-4 d-flex'>
+                    <div className='col-lg-4 p-2 d-flex justify-content-center'>
                       <img
-                        src="https://img.icons8.com/metro/1600/widescreen-tv.png"
-                        alt=""
-                        className="cardRec"
+                        src='https://img.icons8.com/metro/1600/widescreen-tv.png'
+                        alt=''
+                        className='cardRec'
                       />
                     </div>
-                    <div className="9">
-                      <div className="col-12 title">
+                    <div className='9'>
+                      <div className='col-12 title'>
                         {this.state.cons[4].name}
                       </div>
-                      <div className="col-12 content p-2">
+                      <div className='col-12 content p-2'>
                         {this.state.cons[4].content}
                       </div>
                     </div>
@@ -394,17 +394,16 @@ class recommandations extends Component {
               )}
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className='col-lg-6'>
             <Diagram states={this.state.test} />
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-6" />
-          <div className="col-lg-6 espacePetition">
+        <div className='row'>
+          <div className='col-lg-8 offset-lg-2 espacePetition'>
             <Petition />
           </div>
         </div>
-        <Footer buttonLabel="Legal mentions" px-0 mx-0 />
+        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
       </div>
     );
   }

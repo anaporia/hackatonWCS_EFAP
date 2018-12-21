@@ -1,8 +1,8 @@
-import React from "react";
-import Header from "./Header";
-import { NavLink } from "react-router-dom";
-import "./sondage.css";
-import Footer from "./Footer";
+import React from 'react';
+import Header from './Header';
+import { NavLink } from 'react-router-dom';
+import './sondage.css';
+import Footer from './Footer';
 
 class Sondage extends React.Component {
   constructor() {
@@ -99,154 +99,178 @@ class Sondage extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid mb-0 px-0">
+      <div className='container-fluid mb-0 px-0'>
         <Header />
-        <div className="container-fluid text-center pt-lg-5">
-          <div className="mb-lg-5 pb-lg-5">
+        <div className='container-fluid text-center pt-lg-5'>
+          <div className='mb-lg-5 pb-lg-5'>
             <h3>MA CONSOMMATION</h3>
             <br />
-            <p>
+            <h4>
               (En nombre d'heures d'utilisation et nombre de mails par jour)
-            </p>
+            </h4>
           </div>
-          <div className="row">
-            <table class="table d-flex col-lg-3">
+          <div className='row'>
+            <table class='table d-flex col-lg-3'>
               <tbody>
                 <tr>
-                  <td>PC fixe</td>
+                  <td>
+                    <h5>PC fixe</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.PCfixe}
                     onChange={this.updatePCfixe}
                   />
                 </tr>
                 <tr>
-                  <td>PC portable</td>
+                  <td>
+                    <h5>PC portable</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.PCportable}
                     onChange={this.updatePCportable}
                   />
                 </tr>
                 <tr>
-                  <td>Smartphone</td>
+                  <td>
+                    <h5>Smartphone</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.smartphone}
                     onChange={this.updateSmartphone}
                   />
                 </tr>
                 <tr>
-                  <td>Tablette</td>
+                  <td>
+                    <h5>Tablette</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.tablette}
                     onChange={this.updateTablette}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class="table d-flex col-lg-3">
+            <table class='table d-flex col-lg-3'>
               <tbody>
                 <tr>
-                  <td>Smart TV</td>
+                  <td>
+                    <h5>Smart TV</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.smartTV}
                     onChange={this.updateSmartTV}
                   />
                 </tr>
                 <tr>
-                  <td>Console de jeux</td>
+                  <td>
+                    <h5>Console de jeux</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.console}
                     onChange={this.updateConsole}
                   />
                 </tr>
                 <tr>
-                  <td>Réseaux sociaux</td>
+                  <td>
+                    <h5>Réseaux sociaux</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.social}
                     onChange={this.updateSocial}
                   />
                 </tr>
                 <tr>
-                  <td>Video / Streaming</td>
+                  <td>
+                    <h5>Video / Streaming</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.streaming}
                     onChange={this.updateStreaming}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class="table d-flex col-lg-3">
+            <table class='table d-flex col-lg-3'>
               <tbody>
                 <tr>
-                  <td>Recherche internet</td>
+                  <td>
+                    <h5>Recherche internet</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.isearch}
                     onChange={this.updateISearch}
                   />
                 </tr>
                 <tr>
-                  <td>Jeux en ligne</td>
+                  <td>
+                    <h5>Jeux en ligne</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.online}
                     onChange={this.updateOnline}
                   />
                 </tr>
                 <tr>
-                  <td>nombre de mails reçus & envoyés</td>
+                  <td>
+                    <h5>nombre de mails reçus & envoyés</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.email}
                     onChange={this.updateEmail}
                   />
                 </tr>
                 <tr>
-                  <td>nombre de mails stockés</td>
+                  <td>
+                    <h5>nombre de mails stockés</h5>
+                  </td>
                   <input
-                    placeholder=""
-                    type="tel"
+                    placeholder=''
+                    type='tel'
                     value={this.state.emailStorage}
                     onChange={this.updateEmailStorage}
                   />
                 </tr>
               </tbody>
             </table>
-            <div className="col-centered">
+            <div className='col-centered'>
               <NavLink
                 to={{
-                  pathname: "/conseils",
+                  pathname: '/conseils',
                   state: {
                     states: this.state.states
                   }
                 }}
               >
-                <button type="button" class="btn btn-success">
-                  Je valide
+                <button type='button' class='btn btn-success'>
+                  <h5>Je valide</h5>
                 </button>
               </NavLink>
             </div>
           </div>
         </div>
-        <Footer buttonLabel="Legal mentions" px-0 mx-0 />
+        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
       </div>
     );
   }

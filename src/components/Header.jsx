@@ -44,7 +44,7 @@ class Header extends React.Component {
               <NavLink href='/sondage'>Sondage</NavLink>
             </NavItem>
             <NavItem id='navitem1' eventkey={3}>
-              <NavLink href='/conseils'>Conséils</NavLink>
+              <NavLink href='/conseils'>Conseils</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
