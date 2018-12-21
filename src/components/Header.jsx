@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -7,8 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink
-} from 'reactstrap';
-import './Header.css';
+} from "reactstrap";
+import "./Header.css";
 
 class Header extends React.Component {
   constructor(props) {
@@ -27,27 +27,27 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <Navbar className='py-2' color='success' light expand='md'>
-        <img alt='cook' src='./assets/logo2.png' id='logo' />
-        <NavbarBrand className='px-3'>NOM EQUIPE</NavbarBrand>
+      <Navbar className="py-2" color="success" light expand="md">
+        <img alt="cook" src="./assets/logo2.png" id="logo" />
+        <NavbarBrand className="px-3">NOM EQUIPE</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav
-            bsstyle='pills'
+            bsstyle="pills"
             justified
             activekey={1}
             onSelect={key => this.handleSelect(key)}
-            className='ml-auto'
+            className="ml-auto"
             navbar
           >
             <NavItem eventkey={1}>
-              <NavLink href='/'>Homepage</NavLink>
+              <NavLink href="/">Homepage</NavLink>
             </NavItem>
             <NavItem eventkey={2}>
-              <NavLink href='/sondage'>Sondage</NavLink>
+              <NavLink href="/sondage">Sondage</NavLink>
             </NavItem>
             <NavItem eventkey={3}>
-              <NavLink href='/conseils'>Conséils</NavLink>
+              <NavLink href="/conseils">Conséils</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
