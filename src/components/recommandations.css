@@ -1,0 +1,77 @@
+.head {
+  padding-top: 6%;
+  padding-bottom: 6%;
+  /*color: rgb(176, 36, 134);*/
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tableStats {
+  /*color: rgb(176, 36, 134);*/
+}
+
+.square {
+  min-height: 40vh;
+}
+
+.legendDiv {
+  /*color: rgb(176, 36, 134);*/
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.subSquare {
+  border: 1px /*rgb(176, 36, 134)*/ black solid;
+  min-height: 13vh;
+}
+
+.recommand {
+  color: #01bb53;
+  font-weight: bold;
+  font-size: 2.2em;
+  text-align: left;
+}
+
+.number {
+  font-weight: bold;
+  font-size: 1.5em;
+  word-wrap: break-word;
+}
+
+.cardRec {
+  width: 200px;
+  height: 200px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.content {
+  font-family: "Roboto";
+  font-size: 1em;
+}
+
+.paddSideA,
+.paddSide {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+.espacePetition {
+  margin-top: 2%;
+  margin-bottom: 6%;
+}
+
+.compteur {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.alignBlock {
+  display: flex;
+  justify-content: center;
+}
