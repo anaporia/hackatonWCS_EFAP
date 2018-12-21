@@ -1,93 +1,119 @@
-import React from 'react';
-import Header from './Header';
-import { NavLink } from 'react-router-dom';
-import './sondage.css';
+import React from "react";
+import Header from "./Header";
+import { NavLink } from "react-router-dom";
+import "./sondage.css";
 
 class Sondage extends React.Component {
   constructor() {
     super();
     this.state = {
-      PCfixe: '',
-      PCportable: null,
-      smartphone: '',
-      tablette: '',
-      smartTV: '',
-      console: '',
-      social: '',
-      streaming: '',
-      isearch: '',
-      online: '',
-      email: '',
-      emailStorage: ''
+      states: {
+        PCfixe: null,
+        PCportable: null,
+        smartphone: null,
+        tablette: null,
+        smartTV: null,
+        console: null,
+        social: null,
+        streaming: null,
+        isearch: null,
+        online: null,
+        email: null,
+        emailStorage: null
+      }
     };
   }
 
   updatePCfixe = event => {
-    this.setState({ PCfixe: event.target.value });
+    let states = this.state.states;
+    states.PCfixe = event.target.value;
+    this.setState({ states: states });
   };
 
   updatePCportable = event => {
-    this.setState({ PCportable: event.target.value });
+    let states = this.state.states;
+    states.PCportable = event.target.value;
+    this.setState({ states: states });
   };
 
   updateSmartphone = event => {
-    this.setState({ smartphone: event.target.value });
+    let states = this.state.states;
+    states.smartphone = event.target.value;
+    this.setState({ states: states });
   };
 
   updateTablette = event => {
-    this.setState({ tablette: event.target.value });
+    let states = this.state.states;
+    states.tablette = event.target.value;
+    this.setState({ states: states });
   };
 
   updateSmartTV = event => {
-    this.setState({ smartTV: event.target.value });
+    let states = this.state.states;
+    states.smartTV = event.target.value;
+    this.setState({ states: states });
   };
 
   updateConsole = event => {
-    this.setState({ console: event.target.value });
+    let states = this.state.states;
+    states.console = event.target.value;
+    this.setState({ states: states });
   };
 
   updateSocial = event => {
-    this.setState({ social: event.target.value });
+    let states = this.state.states;
+    states.social = event.target.value;
+    this.setState({ states: states });
   };
 
   updateStreaming = event => {
-    this.setState({ streaming: event.target.value });
+    let states = this.state.states;
+    states.streaming = event.target.value;
+    this.setState({ states: states });
   };
 
   updateISearch = event => {
-    this.setState({ isearch: event.target.value });
+    let states = this.state.states;
+    states.isearch = event.target.value;
+    this.setState({ states: states });
   };
 
   updateOnline = event => {
-    this.setState({ online: event.target.value });
+    let states = this.state.states;
+    states.online = event.target.value;
+    this.setState({ states: states });
   };
 
   updateEmail = event => {
-    this.setState({ email: event.target.value });
+    let states = this.state.states;
+    states.email = event.target.value;
+    this.setState({ states: states });
   };
 
   updateEmailStorage = event => {
-    this.setState({ emailStorage: event.target.value });
+    let states = this.state.states;
+    states.emailStorage = event.target.value;
+    this.setState({ states: states });
   };
 
   render() {
     return (
       <div>
         <Header />
-        <div className='container-fluid justify-content-center'>
-          <div className=''>
+        <div className="container-fluid justify-content-center">
+          <div className="">
             <h3>MA CONSOMMATION</h3>
             <br />
             <p>(En nombre d'heures, sauf pour les mails)</p>
           </div>
-          <div className='row'>
-            <table class='table d-flex col-lg-3'>
+          <div className="row">
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>PC fixe</td>
                   <input
-                    placeholder='PC fixe'
-                    type='tel'
+                    placeholder="PC fixe"
+                    type="tel"
                     value={this.state.PCfixe}
                     onChange={this.updatePCfixe}
                   />
@@ -95,8 +121,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>PC portable</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.PCportable}
                     onChange={this.updatePCportable}
                   />
@@ -104,8 +130,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Smartphone</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.smartphone}
                     onChange={this.updateSmartphone}
                   />
@@ -113,21 +139,21 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Tablette</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.tablette}
                     onChange={this.updateTablette}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class='table d-flex col-lg-3'>
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>Smart TV</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.smartTV}
                     onChange={this.updateSmartTV}
                   />
@@ -135,8 +161,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Console de jeux</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.console}
                     onChange={this.updateConsole}
                   />
@@ -144,8 +170,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Réseaux sociaux</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.social}
                     onChange={this.updateSocial}
                   />
@@ -153,21 +179,21 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Video / Streaming</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.streaming}
                     onChange={this.updateStreaming}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class='table d-flex col-lg-3'>
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>Recherche internet</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.isearch}
                     onChange={this.updateISearch}
                   />
@@ -175,8 +201,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Jeux en ligne</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.online}
                     onChange={this.updateOnline}
                   />
@@ -184,8 +210,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>nombre de mails reçus & envoyés</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.email}
                     onChange={this.updateEmail}
                   />
@@ -193,24 +219,24 @@ class Sondage extends React.Component {
                 <tr>
                   <td>nombre de mails stockés</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.emailStorage}
                     onChange={this.updateEmailStorage}
                   />
                 </tr>
               </tbody>
             </table>
-            <div className='col-centered'>
+            <div className="col-centered">
               <NavLink
                 to={{
-                  pathname: '/conseils',
+                  pathname: "/conseils",
                   state: {
-                    ...this.state
+                    states: this.state.states
                   }
                 }}
               >
-                <button type='button' class='btn btn-success'>
+                <button type="button" class="btn btn-success">
                   Je valide
                 </button>
               </NavLink>

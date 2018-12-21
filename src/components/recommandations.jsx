@@ -47,16 +47,20 @@ const Tableau = props => {
             <h4>Depuis que vous êtes sur cette page :</h4>
           </div>
           <div className="row alignBlock col-12 py-2">
-            {props.test.map(data => (
-              <div className="col-lg-2 m-2 subSquare">
-                <div className="col-12 py-2 d-flex justify-content-center">
-                  Mail reçus :
-                </div>
-                <div className="col-12 py-4 number d-flex justify-content-center">
-                  {data.calculState}
-                </div>
-              </div>
-            ))}
+            {props.test.map(data => {
+              if (data.calculState !== 0) {
+                return (
+                  <div className="col-lg-2 m-2 subSquare">
+                    <div className="col-12 py-2 d-flex justify-content-center">
+                      {data.name}
+                    </div>
+                    <div className="col-12 py-4 number d-flex justify-content-center">
+                      {data.calculState}
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
@@ -88,21 +92,72 @@ const One = props => {
 
 class recommandations extends Component {
   constructor(props) {
+    alert(props.location.state.states.online);
     super(props);
     this.state = {
       test: [
         {
-          calcul: (2 * 0.06472603) / 864000,
+          name: "Ordi fixe",
+          calcul: (props.location.state.states.PCfixe * 0.06472603) / 864000,
           calculState: 0
         },
-        { calcul: (2 * 0.05787671) / 864000, calculState: 0 },
-        { calcul: (2 * 0.02731668) / 864000, calculState: 0 },
-        { calcul: (2 * 0.34240286) / 864000, calculState: 0 },
-        { calcul: (2 * 0.09315068) / 864000, calculState: 0 },
-        { calcul: (2 * 0.13972603) / 864000, calculState: 0 },
-        { calcul: (2 * 0.255) / 864000, calculState: 0 },
-        { calcul: (2 * 0.51) / 864000, calculState: 0 },
-        { calcul: (2 * 0.51) / 864000, calculState: 0 }
+        {
+          name: "Ordi portable",
+          calcul:
+            (props.location.state.states.PCportable * 0.05787671) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Smartphone",
+          calcul:
+            (props.location.state.states.smartphone * 0.02731668) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Télé connecté",
+          calcul: (props.location.state.states.tablette * 0.34240286) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Tablettes",
+          calcul: (props.location.state.states.smartTV * 0.09315068) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Console de jeux de salon",
+          calcul: (props.location.state.states.console * 0.13972603) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Réseaux sociaux",
+          calcul: (props.location.state.states.social * 0.255) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Vidéo / Streaming",
+          calcul: (props.location.state.states.streaming * 0.51) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Jeux en ligne",
+          calcul: (props.location.state.states.isearch * 0.51) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Recherches internet",
+          calcul: (props.location.state.states.online * 0.007) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Nb de mails reçus / envoyés",
+          calcul: (props.location.state.states.email * 0.02) / 864000,
+          calculState: 0
+        },
+        {
+          name: "Nb de mails stockés",
+          calcul: (props.location.state.states.emailStorage * 0.01) / 864000,
+          calculState: 0
+        }
       ],
       cons: [
         {
