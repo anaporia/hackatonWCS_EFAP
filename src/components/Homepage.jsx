@@ -12,7 +12,7 @@ class Homepage extends React.Component {
             <div className='Board col-lg-6'>
               <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2' className='container'>
+                  <th rowSpan='2' className='container'>
                     <img
                       className='picture1'
                       src='./assets/sun.png'
@@ -21,6 +21,7 @@ class Homepage extends React.Component {
                   </th>
                   <td className='td'>Consommation KW</td>
                 </tr>
+
                 <tr>
                   <td>Consommation KW</td>
                 </tr>
@@ -28,7 +29,7 @@ class Homepage extends React.Component {
 
               <table className=' Table text-center' border='1px'>
                 <tr>
-                  <th rowspan='2' className='container'>
+                  <th rowSpan='2' className='container'>
                     <img
                       className='picture1'
                       src='./assets/moon.png'
@@ -44,9 +45,9 @@ class Homepage extends React.Component {
             </div>
             <div className='Youtube col-lg-6'>
               <YouTube
-                videoId='Fki8FxTryuI'
+                videoId='Q6ONgc6E1z0'
                 className='player embed-responsive-item'
-                autoPlayVideo={true}
+                controls={1}
               />
             </div>
           </div>
