@@ -73,14 +73,17 @@ const Tableau = props => {
           <div className="row alignBlock col-12 py-2">
             {props.test.map(data => {
               if (data.calculState !== 0) {
+                let c = "";
+                for (let a = 0; a < 10; a++) {
+                  c = c + String(data.calculState)[a];
+                }
+                c = Number(c);
                 return (
                   <div className="col-lg-2 m-2 subSquare">
                     <div className="col-12 py-2 d-flex justify-content-center">
                       {data.name}
                     </div>
-                    <div className="col-12 py-4 number">
-                      {data.calculState + " Kg de Co2"}
-                    </div>
+                    <div className="col-12 py-4 number">{c + " Kg de Co2"}</div>
                   </div>
                 );
               }
@@ -241,13 +244,6 @@ class recommandations extends Component {
 
         for (let i = 0; i < calculs.length; i++) {
           calculs[i].calculState = calculs[i].calculState + calculs[i].calcul;
-
-          let c = "";
-          for (let a = 0; a < 10; a++) {
-            c = c + String(calculs[i].calculState)[a];
-          }
-          c = Number(c);
-          calculs[i].calculState = c;
         }
         this.setState({
           test: calculs,

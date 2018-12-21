@@ -1,8 +1,8 @@
-import React from 'react';
-import Header from './Header';
-import { NavLink } from 'react-router-dom';
-import './sondage.css';
-import Footer from './Footer';
+import React from "react";
+import Header from "./Header";
+import { NavLink } from "react-router-dom";
+import "./sondage.css";
+import Footer from "./Footer";
 
 class Sondage extends React.Component {
   constructor() {
@@ -99,24 +99,24 @@ class Sondage extends React.Component {
 
   render() {
     return (
-      <div className='container-fluid mb-0 px-0'>
+      <div className="container-fluid mb-0 px-0">
         <Header />
-        <div className='container-fluid text-center pt-lg-5'>
-          <div className='mb-lg-5 pb-lg-5'>
+        <div className="container-fluid text-center pt-lg-5">
+          <div className="mb-lg-5 pb-lg-5">
             <h3>MA CONSOMMATION</h3>
             <br />
             <p>
               (En nombre d'heures d'utilisation et nombre de mails par jour)
             </p>
           </div>
-          <div className='row'>
-            <table class='table d-flex col-lg-3'>
+          <div className="row">
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>PC fixe</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.PCfixe}
                     onChange={this.updatePCfixe}
                   />
@@ -124,8 +124,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>PC portable</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.PCportable}
                     onChange={this.updatePCportable}
                   />
@@ -133,8 +133,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Smartphone</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.smartphone}
                     onChange={this.updateSmartphone}
                   />
@@ -142,21 +142,21 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Tablette</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.tablette}
                     onChange={this.updateTablette}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class='table d-flex col-lg-3'>
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>Smart TV</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.smartTV}
                     onChange={this.updateSmartTV}
                   />
@@ -164,8 +164,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Console de jeux</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.console}
                     onChange={this.updateConsole}
                   />
@@ -173,8 +173,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Réseaux sociaux</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.social}
                     onChange={this.updateSocial}
                   />
@@ -182,21 +182,21 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Video / Streaming</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.streaming}
                     onChange={this.updateStreaming}
                   />
                 </tr>
               </tbody>
             </table>
-            <table class='table d-flex col-lg-3'>
+            <table class="table d-flex col-lg-3">
               <tbody>
                 <tr>
                   <td>Recherche internet</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.isearch}
                     onChange={this.updateISearch}
                   />
@@ -204,8 +204,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>Jeux en ligne</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.online}
                     onChange={this.updateOnline}
                   />
@@ -213,8 +213,8 @@ class Sondage extends React.Component {
                 <tr>
                   <td>nombre de mails reçus & envoyés</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.email}
                     onChange={this.updateEmail}
                   />
@@ -222,31 +222,31 @@ class Sondage extends React.Component {
                 <tr>
                   <td>nombre de mails stockés</td>
                   <input
-                    placeholder=''
-                    type='tel'
+                    placeholder=""
+                    type="tel"
                     value={this.state.emailStorage}
                     onChange={this.updateEmailStorage}
                   />
                 </tr>
               </tbody>
             </table>
-            <div className='col-centered'>
+            <div className="col-centered">
               <NavLink
                 to={{
-                  pathname: '/conseils',
+                  pathname: "/conseils",
                   state: {
                     states: this.state.states
                   }
                 }}
               >
-                <button type='button' class='btn btn-success'>
+                <button type="button" class="btn btn-success">
                   Je valide
                 </button>
               </NavLink>
             </div>
           </div>
         </div>
-        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
+        <Footer buttonLabel="Legal mentions" px-0 mx-0 />
       </div>
     );
   }
