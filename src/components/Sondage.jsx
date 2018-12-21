@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import { NavLink } from 'react-router-dom';
 import './sondage.css';
+import Footer from './Footer';
 
 class Sondage extends React.Component {
   constructor() {
@@ -217,6 +218,7 @@ class Sondage extends React.Component {
             </div>
           </div>
         </div>
+        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
       </div>
     );
   }

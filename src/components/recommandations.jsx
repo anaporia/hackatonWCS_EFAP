@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './recommandations.css';
 import Petition from './Petition';
 import Header from './Header';
+import Footer from './Footer';
 
 const Diagram = props => {
   const data = {
@@ -134,6 +135,7 @@ class recommandations extends Component {
             <Petition />
           </div>
         </div>
+        <Footer buttonLabel='Legal mentions' px-0 mx-0 />
       </div>
     );
   }
