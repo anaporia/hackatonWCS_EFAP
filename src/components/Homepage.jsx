@@ -17,7 +17,7 @@ class Homepage extends React.Component {
     return (
       <div>
         <Header />
-        <div className='container'>
+        <div className='container pb-5'>
           <div className='row align-items-center'>
             <div className='Board col-lg-6'>
               <div>
