@@ -68,33 +68,11 @@ const Tableau = props => {
   );
 };
 
-const One = props => {
-  return (
-    <React.Fragment>
-      <div className="col-lg-6 d-flex justify-content-center">
-        <div className="col-12 my-4 d-flex border">
-          <div className="col-4 p-2">
-            <img
-              src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
-              alt=""
-              className="cardRec"
-            />
-          </div>
-          <div className="9">
-            <div className="12 title">{props.data.name}</div>
-            <div className="12 content p-2">{props.data.content}</div>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
-};
-
 class recommandations extends Component {
   constructor(props) {
-    alert(props.location.state.states.online);
     super(props);
     this.state = {
+      objet: {},
       test: [
         {
           name: "Ordi fixe",
@@ -163,13 +141,15 @@ class recommandations extends Component {
         {
           name: "PCfix",
           content:
-            "Choisir un pc portable car il consomme 4 fois moins d’électricité qu’un ordinateur fixe pour des performances équivalentes."
+            "Choisir un pc portable car il consomme 4 fois moins d’électricité qu’un ordinateur fixe pour des performances équivalentes.",
+          ref: "PCfixe"
         },
         {
           name: "PCportable",
           content: `Utiliser au maximum votre batterie au lieu de le brancher (tout en pensant à ne pas laisser le chargeur branché dans la prise). \
             Choisissez votre ordinateur car vous n’avez pas besoin d’un pc surpuissant et donc très consommateur d’électricité pour regarder des mails, \
-            des films ou discuter sur internet.`
+            des films ou discuter sur internet.`,
+          ref: "PCportable"
         },
         {
           name: "Mail",
@@ -183,7 +163,8 @@ class recommandations extends Component {
             Installer un anti-spam, évitez ainsi des milliers de messages par an. \
             Désabonnez-vous des newsletters que vous ne lisez pas \
             Limiter le nombre de destinataires.
-            `
+            `,
+          ref: "email"
         },
         {
           name: "Recherches",
@@ -193,7 +174,8 @@ class recommandations extends Component {
           barre des favoris et optimisez vos recherches en utilisant des mots-clés précis. \
           Diminuer le nombre de pages consultées en utilisant des mots clés précis lors de nos recherches \
           Saisissez quand c’est possible, directement l’adresse du site dans la barre de navigation
-            `
+            `,
+          ref: "isearch"
         },
         {
           name: "Ecran",
@@ -212,7 +194,8 @@ ordinateur classique », par exemple après 10 mn d’inutilisation. \
 Le stade le plus pertinent en termes d’économie d’énergie est celui de la « veille prolongée » ou
 « hibernation ». Dans ce mode, l’ordinateur recopie la totalité des données de la mémoire vive
 sur le disque dur, avant de couper l’alimentation.
-            `
+            `,
+          ref: "streaming"
         }
       ]
     };
@@ -225,13 +208,13 @@ sur le disque dur, avant de couper l’alimentation.
       for (let i = 0; i < calculs.length; i++) {
         calculs[i].calculState = calculs[i].calculState + calculs[i].calcul;
       }
-      this.setState({ test: calculs });
+      this.setState({ test: calculs, objet: this.props.location.state.states });
     }, 100);
   }
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid px-0">
         <Header />
         <div className="row d-flex justify-content-center">
           <div className="col-8 head">
@@ -251,9 +234,101 @@ sur le disque dur, avant de couper l’alimentation.
         <div className="row">
           <div className="col-lg-6 paddSideA">
             <div className="row paddSide">
-              {this.state.cons.map(data => (
-                <One data={data} />
-              ))}
+              {this.props.location.state.states.PCfixe !== null && (
+                <div className="col-lg-6 d-flex justify-content-center">
+                  <div className="col-12 my-4 d-flex border">
+                    <div className="col-4 p-2">
+                      <img
+                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        alt=""
+                        className="cardRec"
+                      />
+                    </div>
+                    <div className="9">
+                      <div className="12 title">{this.state.cons[0].name}</div>
+                      <div className="12 content p-2">
+                        {this.state.cons[0].content}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.props.location.state.states.PCportable !== null && (
+                <div className="col-lg-6 d-flex justify-content-center">
+                  <div className="col-12 my-4 d-flex border">
+                    <div className="col-4 p-2">
+                      <img
+                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        alt=""
+                        className="cardRec"
+                      />
+                    </div>
+                    <div className="9">
+                      <div className="12 title">{this.state.cons[1].name}</div>
+                      <div className="12 content p-2">
+                        {this.state.cons[1].content}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.props.location.state.states.email !== null && (
+                <div className="col-lg-6 d-flex justify-content-center">
+                  <div className="col-12 my-4 d-flex border">
+                    <div className="col-4 p-2">
+                      <img
+                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        alt=""
+                        className="cardRec"
+                      />
+                    </div>
+                    <div className="9">
+                      <div className="12 title">{this.state.cons[2].name}</div>
+                      <div className="12 content p-2">
+                        {this.state.cons[2].content}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.props.location.state.states.isearch !== null && (
+                <div className="col-lg-6 d-flex justify-content-center">
+                  <div className="col-12 my-4 d-flex border">
+                    <div className="col-4 p-2">
+                      <img
+                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        alt=""
+                        className="cardRec"
+                      />
+                    </div>
+                    <div className="9">
+                      <div className="12 title">{this.state.cons[3].name}</div>
+                      <div className="12 content p-2">
+                        {this.state.cons[3].content}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.props.location.state.states.streaming !== null && (
+                <div className="col-lg-6 d-flex justify-content-center">
+                  <div className="col-12 my-4 d-flex border">
+                    <div className="col-4 p-2">
+                      <img
+                        src="http://ainaf.com/montreal/wp-content/uploads/sites/2/2017/07/placeholder.jpg"
+                        alt=""
+                        className="cardRec"
+                      />
+                    </div>
+                    <div className="9">
+                      <div className="12 title">{this.state.cons[4].name}</div>
+                      <div className="12 content p-2">
+                        {this.state.cons[4].content}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="col-lg-6">

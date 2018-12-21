@@ -98,7 +98,7 @@ class Sondage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container-fluid px-0'>
         <Header />
         <div className="container-fluid justify-content-center">
           <div className="">
